@@ -16,6 +16,7 @@
 		A3CEE5CF2B27894E0005A134 /* AffirmAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5CE2B27894E0005A134 /* AffirmAppTests.swift */; };
 		A3CEE5D92B27894E0005A134 /* AffirmAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5D82B27894E0005A134 /* AffirmAppUITests.swift */; };
 		A3CEE5DB2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5DA2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift */; };
+		A3CEE5EB2B27921F0005A134 /* AffirmationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5EA2B27921F0005A134 /* AffirmationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A3CEE5D42B27894E0005A134 /* AffirmAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AffirmAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CEE5D82B27894E0005A134 /* AffirmAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmAppUITests.swift; sourceTree = "<group>"; };
 		A3CEE5DA2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A3CEE5EA2B27921F0005A134 /* AffirmationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				A3CEE5B82B27894D0005A134 /* AffirmAppApp.swift */,
-				A3CEE5BA2B27894D0005A134 /* ContentView.swift */,
+				A3CEE5E92B2791800005A134 /* View Model */,
+				A3CEE5E82B2791750005A134 /* Views */,
+				A3CEE5E72B27914C0005A134 /* Model */,
+				A3CEE5EC2B27982E0005A134 /* Services */,
 				A3CEE5BC2B27894E0005A134 /* Assets.xcassets */,
-				A3CEE5C12B27894E0005A134 /* Persistence.swift */,
 				A3CEE5C32B27894E0005A134 /* AffirmApp.xcdatamodeld */,
 				A3CEE5BE2B27894E0005A134 /* Preview Content */,
 			);
@@ -131,6 +135,37 @@
 				A3CEE5DA2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift */,
 			);
 			path = AffirmAppUITests;
+			sourceTree = "<group>";
+		};
+		A3CEE5E72B27914C0005A134 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEE5EA2B27921F0005A134 /* AffirmationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3CEE5E82B2791750005A134 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEE5BA2B27894D0005A134 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A3CEE5E92B2791800005A134 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		A3CEE5EC2B27982E0005A134 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A3CEE5C12B27894E0005A134 /* Persistence.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +300,7 @@
 			files = (
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
 				A3CEE5C22B27894E0005A134 /* Persistence.swift in Sources */,
+				A3CEE5EB2B27921F0005A134 /* AffirmationModel.swift in Sources */,
 				A3CEE5BB2B27894D0005A134 /* ContentView.swift in Sources */,
 				A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */,
 			);
