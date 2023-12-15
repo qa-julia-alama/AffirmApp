@@ -13,7 +13,7 @@ struct AffirmAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
