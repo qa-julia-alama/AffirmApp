@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isAddAffirmationViewPresented: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+            ZStack{
+                Color.white.ignoresSafeArea()
+                
+                ScrollView{
+            
+                }
+            } //ZStack
+            .sheet(isPresented: $isAddAffirmationViewPresented, content: {
+                AddAffirmationView()
+            })
+            .navigationTitle("Affirmation App")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                    // Add affirmation
+                        isAddAffirmationViewPresented.toggle()
+                        print(isAddAffirmationViewPresented)
+                }, label: {
+                    Image(systemName: "plus")
+                })
+                    }
+            } //toolbar
+             } //NavigationView
     }
 }
 

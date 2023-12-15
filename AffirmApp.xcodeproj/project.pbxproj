@@ -10,6 +10,7 @@
 		A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDC2B2CE1E500D46479 /* TabContentView.swift */; };
 		A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDE2B2CE37800D46479 /* HomeView.swift */; };
 		A3614CE12B2CE38B00D46479 /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CE02B2CE38B00D46479 /* AffirmationView.swift */; };
+		A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */; };
 		A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5B82B27894D0005A134 /* AffirmAppApp.swift */; };
 		A3CEE5BD2B27894E0005A134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3CEE5BC2B27894E0005A134 /* Assets.xcassets */; };
 		A3CEE5C02B27894E0005A134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3CEE5BF2B27894E0005A134 /* Preview Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		A3614CDE2B2CE37800D46479 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A3614CE02B2CE38B00D46479 /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
+		A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAffirmationView.swift; sourceTree = "<group>"; };
 		A3CEE5B52B27894D0005A134 /* AffirmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AffirmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CEE5B82B27894D0005A134 /* AffirmAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmAppApp.swift; sourceTree = "<group>"; };
 		A3CEE5BC2B27894E0005A134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3614CE22B2CEB6E00D46479 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A3CEE5AC2B27894D0005A134 = {
 			isa = PBXGroup;
 			children = (
@@ -152,9 +161,11 @@
 		A3CEE5E82B2791750005A134 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3614CE22B2CEB6E00D46479 /* Components */,
 				A3614CDC2B2CE1E500D46479 /* TabContentView.swift */,
 				A3614CDE2B2CE37800D46479 /* HomeView.swift */,
 				A3614CE02B2CE38B00D46479 /* AffirmationView.swift */,
+				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +322,7 @@
 				A3614CE12B2CE38B00D46479 /* AffirmationView.swift in Sources */,
 				A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */,
 				A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */,
+				A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
