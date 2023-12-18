@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel = HomeViewModel()
     @State private var isAddAffirmationViewPresented: Bool = false
     var body: some View {
         
@@ -15,14 +16,18 @@ struct HomeView: View {
             ZStack{
                 Color.white.ignoresSafeArea()
                 
-                ScrollView{
-            
+                VStack{
+                
+                    AffirmationOfTheDayView(affirmation: $viewModel.affirmationOfTheDay)
+                    Spacer()
+                
                 }
+                
             } //ZStack
             .sheet(isPresented: $isAddAffirmationViewPresented, content: {
                 AddAffirmationView()
             })
-            .navigationTitle("Affirmation App")
+            .navigationTitle("Witaj przyjacielu!")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
@@ -33,6 +38,7 @@ struct HomeView: View {
                     Image(systemName: "plus")
                 })
                     }
+            
             } //toolbar
              } //NavigationView
     }

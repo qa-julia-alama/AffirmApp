@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Affirmation {
+struct Affirmation
+{
+    let id: Int
     let description: String
     
 }

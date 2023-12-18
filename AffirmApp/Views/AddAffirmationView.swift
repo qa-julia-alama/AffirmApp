@@ -13,7 +13,7 @@ struct AddAffirmationView: View {
         ZStack {
             Color.pink.ignoresSafeArea()
             
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("Add affirmation form")
         }
     }
 }
