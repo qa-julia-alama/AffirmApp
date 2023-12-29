@@ -15,6 +15,7 @@ struct AffirmAppApp: App {
         WindowGroup {
             TabContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            
         }
     }
 }

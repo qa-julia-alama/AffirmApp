@@ -6,14 +6,24 @@
 //
 
 import SwiftUI
-
 struct AddAffirmationView: View {
+    @StateObject var viewModel = HomeViewModel()
+        @State private var isAddAffirmationViewPresented: Bool = false
+        @State private var newAffirmation: String = ""
     var body: some View {
         
-        ZStack {
-            Color.pink.ignoresSafeArea()
+        VStack (spacing: 30) {
             
-            Text("Add affirmation form")
+            Color.yellow
+                .sheet(isPresented: $isAddAffirmationViewPresented, content: {
+                })
+            TextField("Wpisz afirmację", text: $newAffirmation)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            
+            
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Text("Zapisz")
+            })
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A300DBA92B3CA37200BF4FC1 /* FirstLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300DBA82B3CA37200BF4FC1 /* FirstLaunchViewModel.swift */; };
 		A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F272B30D44C00B635A9 /* Constans.swift */; };
 		A32F2F2A2B30DBB300B635A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */; };
 		A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDC2B2CE1E500D46479 /* TabContentView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A300DBA82B3CA37200BF4FC1 /* FirstLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewModel.swift; sourceTree = "<group>"; };
 		A32F2F272B30D44C00B635A9 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A300DBA72B3CA33200BF4FC1 /* FirstLaunchView */ = {
+			isa = PBXGroup;
+			children = (
+				A300DBA82B3CA37200BF4FC1 /* FirstLaunchViewModel.swift */,
+			);
+			path = FirstLaunchView;
+			sourceTree = "<group>";
+		};
 		A32F2F262B30D41B00B635A9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		A3614CE52B2D094700D46479 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				A3614CDE2B2CE37800D46479 /* HomeView.swift */,
 				A3F4DE332B2E1A4600DA94AE /* HeaderView.swift */,
 				A3F4DE352B2E1FC100DA94AE /* AffirmationOfTheDayView.swift */,
 			);
@@ -187,10 +198,10 @@
 		A3CEE5E82B2791750005A134 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A300DBA72B3CA33200BF4FC1 /* FirstLaunchView */,
 				A3614CE52B2D094700D46479 /* HomeView */,
 				A3614CE22B2CEB6E00D46479 /* Components */,
 				A3614CDC2B2CE1E500D46479 /* TabContentView.swift */,
-				A3614CDE2B2CE37800D46479 /* HomeView.swift */,
 				A3614CE02B2CE38B00D46479 /* AffirmationView.swift */,
 				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
 			);
@@ -346,6 +357,7 @@
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
 				A3F4DE342B2E1A4600DA94AE /* HeaderView.swift in Sources */,
 				A3CEE5C22B27894E0005A134 /* Persistence.swift in Sources */,
+				A300DBA92B3CA37200BF4FC1 /* FirstLaunchViewModel.swift in Sources */,
 				A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */,
 				A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */,
 				A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */,
