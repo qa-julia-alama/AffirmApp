@@ -12,18 +12,29 @@ struct AddAffirmationView: View {
         @State private var newAffirmation: String = ""
     var body: some View {
         
-        VStack (spacing: 30) {
-            
-            Color.yellow
-                .sheet(isPresented: $isAddAffirmationViewPresented, content: {
+        ZStack {
+            Color.yellow.ignoresSafeArea()
+            VStack (spacing: 30) {
+                Text("Dodaj afirmację")
+                    .fontWeight(.semibold)
+                    .font(.system(size: 30))
+                    
+                TextField("Wpisz afirmację", text: $newAffirmation, axis: .vertical)
+
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
+                
+//                TextField("Wpisz afirmację", text: $newAffirmation)
+//                    .padding()
+//                    
+//                                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Text("Zapisz")
                 })
-            TextField("Wpisz afirmację", text: $newAffirmation)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Text("Zapisz")
-            })
+                
+            }
         }
     }
 }
