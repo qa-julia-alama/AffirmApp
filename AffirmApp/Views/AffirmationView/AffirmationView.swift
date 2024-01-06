@@ -42,16 +42,6 @@ struct AffirmationView: View {
                         }
                         } // List
                     
-                    .sheet(isPresented: $isAddAffirmationViewPresented, onDismiss: {
-                        viewModel.fetchAffirmations()
-                    }, content: {
-                        if #available(iOS 16.0, *) {
-                            AddAffirmationView()
-                                .presentationDetents([.medium])
-                        } else {
-                            AddAffirmationView()
-                        }
-                    })
                 case .ulubione:
                     List {
                         ForEach($viewModel.favourites, id: \.self) { affirmation in
@@ -64,6 +54,16 @@ struct AffirmationView: View {
                 }
                     Spacer()
                 } // VStack
+            .sheet(isPresented: $isAddAffirmationViewPresented, onDismiss: {
+                viewModel.fetchAffirmations()
+            }, content: {
+                if #available(iOS 16.0, *) {
+                    AddAffirmationView()
+                        .presentationDetents([.medium])
+                } else {
+                    AddAffirmationView()
+                }
+            }) // sheet
             .navigationTitle("Lista afirmacji")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
