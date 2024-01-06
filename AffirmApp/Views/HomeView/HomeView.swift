@@ -19,7 +19,8 @@ struct HomeView: View {
                     
                     VStack{
                         
-                        AffirmationOfTheDayView(affirmation: $viewModel.affirmationOfTheDay)
+                        AffirmationOfTheDayView()
+                            .environmentObject(viewModel)
                         Spacer()
                         
                     }

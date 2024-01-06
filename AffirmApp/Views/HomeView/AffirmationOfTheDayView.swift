@@ -8,27 +8,51 @@
 import SwiftUI
 
 struct AffirmationOfTheDayView: View {
-    @Binding var affirmation: Affirmation
+    @EnvironmentObject var viewModel: HomeViewModel
     var body: some View {
+    
         
 // ZStack {
             RoundedRectangle(cornerRadius: 30)
                 .fill(Constans.gradient)
                 .frame(height: 200)
                 .shadow(radius: 20)
-                .padding()
+//                .padding()
+                .overlay(alignment: .topTrailing, content: {
+                    Button(action: {
+                        viewModel.affirmationOfTheDay = viewModel.getRandomAffirmation()
+                    }, label: {
+                       Image(systemName: "arrow.counterclockwise")
+                            .padding()
+                            .background(Circle().fill(.white).padding())
+                    })
+                })
                 .overlay(alignment: .center) {
-                    Text(affirmation.description)
-                        .padding(.horizontal, 15)
+                    
+                    VStack(spacing:10) {
+                        Text("Afirmacja dnia: ")
+                            .font(.title2)
+                            .bold()
+                        
+                        Text(viewModel.affirmationOfTheDay.description)
+                            .padding(.horizontal, 25)
                         .multilineTextAlignment(.center)
+                        
+                        Button(action: {
+                            // dodaj do ulubionych
+                        }, label: {
+                            Image(systemName: "star")
+                        })
+                    }
                 }
-            
+                .padding()
           
        // }//ZStack
         
     }
+
 }
     #Preview {
-        AffirmationOfTheDayView(affirmation: .constant(Affirmation(id: 11, description: "Będzie dobrze")))
+        AffirmationOfTheDayView()
     }
 
