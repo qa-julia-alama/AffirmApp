@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
+
 struct AddAffirmationView: View {
-    @StateObject var viewModel = HomeViewModel()
-        @State private var isAddAffirmationViewPresented: Bool = false
-        @State private var newAffirmation: String = ""
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = AddAffirmationViewModel()
+    @State private var newAffirmation: String = ""
+    @State private var isAddAffirmationViewPresented: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -23,14 +27,14 @@ struct AddAffirmationView: View {
 
                     .textFieldStyle(.roundedBorder)
                     .padding()
+                                    
                 
-//                TextField("Wpisz afirmację", text: $newAffirmation)
-//                    .padding()
-//                    
-//                                .textFieldStyle(RoundedBorderTextFieldStyle())
-//                                
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    guard !newAffirmation.isEmpty else { return }
+                    viewModel.addAffirmation(text: newAffirmation)
+                    newAffirmation = ""
+                    dismiss()
+                }, label: {
                     Text("Zapisz")
                 })
                 
@@ -38,6 +42,7 @@ struct AddAffirmationView: View {
         }
     }
 }
+
 
 #Preview {
     AddAffirmationView()
