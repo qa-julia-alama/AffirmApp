@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Affirmation
+struct Affirmation: Equatable, Hashable, Codable
 {
     let id: Int
     let description: String

@@ -24,7 +24,7 @@ struct AffirmationOfTheDayView: View {
                     }, label: {
                        Image(systemName: "arrow.counterclockwise")
                             .padding()
-                            .background(Circle().fill(.white).padding())
+                            .background(Circle().fill(.white.opacity(0.8)).padding(10))
                     })
                 })
                 .overlay(alignment: .center) {
@@ -39,9 +39,11 @@ struct AffirmationOfTheDayView: View {
                         .multilineTextAlignment(.center)
                         
                         Button(action: {
-                            // dodaj do ulubionych
+                            viewModel.saveToFavourites()
                         }, label: {
-                            Image(systemName: "star")
+                            Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
+                                .padding()
+                                //.foregroundColor(.black)
                         })
                     }
                 }

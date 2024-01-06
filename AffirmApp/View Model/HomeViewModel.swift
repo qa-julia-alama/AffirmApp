@@ -10,9 +10,11 @@ import Foundation
 final class HomeViewModel: ObservableObject {
     
     @Published var affirmationOfTheDay: Affirmation = Affirmation(id: 0, description: " ")
-    
+    private var favourites: [Affirmation] = []
+    @Published var isFavourite: Bool = false
     @Published var shouldShowPopup = false
     @Published var continuityCounter: Int = 1
+    private var favouritesService = FavouritesService.shared
     
     init() {
             affirmationOfTheDay = getRandomAffirmation()
@@ -20,10 +22,27 @@ final class HomeViewModel: ObservableObject {
     }
     
     func getRandomAffirmation() -> Affirmation {
+        getFavourites()
         let numberOfAffirmations = Constans.affirmations.count
         let randomId = Int.random(in: 0...numberOfAffirmations)
         let affirmation = Constans.affirmations.first {$0.id == randomId} ?? Affirmation(id: 0, description: "Będzie dobrze")
+        if favourites.contains(affirmation) {
+            isFavourite = true
+        } else {
+            isFavourite = false
+        }
     return affirmation
+    }
+    
+    func saveToFavourites() {
+        favouritesService.add(affirmationOfTheDay)
+        getFavourites()
+        print(favourites)
+    }
+    
+    func getFavourites() {
+        favouritesService.fetch()
+        favourites = favouritesService.favouritesArray
     }
     
     private func checkPopupDisplay() {
@@ -54,4 +73,5 @@ final class HomeViewModel: ObservableObject {
          defaults.set(1, forKey: Constans.counter)
         }
     }
+    
 }

@@ -12,6 +12,7 @@ struct Constans {
     static var gradient: LinearGradient {
         return LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.orange, Color.yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
+    static let favourites = "Favourites"
     static let counter = "Counter"
     static let affirmations: [Affirmation] = [
             Affirmation(id: 1, description: "Jestem silny i zdolny"),
