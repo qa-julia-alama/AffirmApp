@@ -12,6 +12,8 @@ class AffirmationViewModel: ObservableObject {
     
     let container: NSPersistentContainer
     @Published var savedEntities: [AffirmationEntity] = []
+    @Published var favourites: [Affirmation] = []
+    private var favouritesService = FavouritesService.shared
     
     init() {
         container = NSPersistentContainer(name:  "AffirmationsContainer")
@@ -23,6 +25,8 @@ class AffirmationViewModel: ObservableObject {
             }
         }
         fetchAffirmations()
+        getFavourites()
+        print("init")
     } // init
     
     func fetchAffirmations() {
@@ -43,12 +47,10 @@ class AffirmationViewModel: ObservableObject {
     
     
     func deleteAffirmation(offsets: IndexSet) {
-           // withAnimation {
             guard let index = offsets.first else { return }
             let affirmationEntity = savedEntities[index]
             container.viewContext.delete(affirmationEntity)
             saveData()
-           // }
         }
  
     func saveData() {
@@ -58,6 +60,18 @@ class AffirmationViewModel: ObservableObject {
         } catch let error {
             print("Error saving. \(error)")
         }
+    }
+    
+    func getFavourites() {
+        favouritesService.fetch()
+        favourites = favouritesService.favouritesArray
+    }
+    
+    func deleteFavourite(offsets: IndexSet) {
+        guard let index = offsets.first else { return }
+        let affirmation = favourites[index]
+        favouritesService.remove(affirmation)
+        getFavourites()
     }
     
 }

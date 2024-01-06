@@ -53,5 +53,6 @@ final class FavouritesService: ObservableObject {
             if let encoded = try? encoder.encode(favouritesList) {
                 defaults.setValue(encoded, forKey: Constans.favourites)
             }
+            fetch()
         }
     }

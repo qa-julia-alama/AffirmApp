@@ -53,7 +53,14 @@ struct AffirmationView: View {
                         }
                     })
                 case .ulubione:
-                Text("Tu będą ulubione")
+                    List {
+                        ForEach($viewModel.favourites, id: \.self) { affirmation in
+                            Text(affirmation.wrappedValue.description)
+                        }
+                        .onDelete { indexSet in
+                            viewModel.deleteFavourite(offsets: indexSet)
+                        }
+                        } // List
                 }
                     Spacer()
                 } // VStack
