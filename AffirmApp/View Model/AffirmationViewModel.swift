@@ -42,14 +42,14 @@ class AffirmationViewModel: ObservableObject {
     }
     
     
-//    func deleteAffirmation(offsets: IndexSet) {
-//            withAnimation {
-//            guard let index = offsets.first else { return }
-//            let affirmationEntity = AffirmationEntity(context: container.viewContext)
-//            container.viewContext.delete(affirmationEntity)
-//            saveData()
-//            }
-//        }
+    func deleteAffirmation(offsets: IndexSet) {
+           // withAnimation {
+            guard let index = offsets.first else { return }
+            let affirmationEntity = savedEntities[index]
+            container.viewContext.delete(affirmationEntity)
+            saveData()
+           // }
+        }
  
     func saveData() {
         do {

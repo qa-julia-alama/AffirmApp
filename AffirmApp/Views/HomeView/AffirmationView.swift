@@ -19,10 +19,12 @@ struct AffirmationView: View {
             VStack(spacing: 20) {
                 
                 List {
-                    ForEach(viewModel.savedEntities) { affirmation in
+                    ForEach(viewModel.savedEntities, id: \.self) { affirmation in
                         Text(affirmation.name ?? "NO NAME")
                     }
-                    //  .onDelete(perform: viewModel.deleteAffirmation)
+                    .onDelete { indexSet in
+                        viewModel.deleteAffirmation(offsets: indexSet)
+                    }
                     } // List
                 .navigationTitle("Lista afirmacji")
                 .sheet(isPresented: $isAddAffirmationViewPresented, onDismiss: {
