@@ -51,7 +51,6 @@ final class HomeViewModel: ObservableObject {
 
         if !Calendar.current.isDateInToday(lastDisplayDate) {
             shouldShowPopup = true
-            defaults.set(Date(), forKey: "lastDisplayDate")
 
             // Aktualizacja licznika ciągłości
             updateContinuityCounter()
@@ -73,5 +72,4 @@ final class HomeViewModel: ObservableObject {
          defaults.set(1, forKey: Constans.counter)
         }
     }
-    
 }

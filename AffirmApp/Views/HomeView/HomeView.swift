@@ -29,7 +29,7 @@ struct HomeView: View {
                 .alert(isPresented: $viewModel.shouldShowPopup) {
                     Alert(
                         title: Text("Przyjacielu!"),
-                        message: Text("Twój postęp wynosi: \(viewModel.continuityCounter) dzień"),
+                        message: Text("Twój postęp tworzenia nawyku wynosi: \(viewModel.continuityCounter) dzień"),
                         dismissButton: .default(Text("OK"))
                     )
                 }
