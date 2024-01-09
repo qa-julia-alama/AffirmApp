@@ -17,8 +17,8 @@ final class HomeViewModel: ObservableObject {
     private var favouritesService = FavouritesService.shared
     
     init() {
-            affirmationOfTheDay = getRandomAffirmation()
-            checkPopupDisplay()
+        affirmationOfTheDay = getRandomAffirmation()
+        checkPopupDisplay()
     }
     
     func getRandomAffirmation() -> Affirmation {
@@ -31,7 +31,7 @@ final class HomeViewModel: ObservableObject {
         } else {
             isFavourite = false
         }
-    return affirmation
+        return affirmation
     }
     
     func saveToFavourites() {
@@ -43,33 +43,61 @@ final class HomeViewModel: ObservableObject {
     func getFavourites() {
         favouritesService.fetch()
         favourites = favouritesService.favouritesArray
+        isFavourite = favourites.contains(affirmationOfTheDay)
     }
     
     private func checkPopupDisplay() {
         let defaults = UserDefaults.standard
         let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
-
+        
         if !Calendar.current.isDateInToday(lastDisplayDate) {
             shouldShowPopup = true
-
+            
             // Aktualizacja licznika ciągłości
             updateContinuityCounter()
         }
     }
-
+    
     private func updateContinuityCounter() {
         let defaults = UserDefaults.standard
         let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
-
+        
         if Calendar.current.isDateInYesterday(lastDisplayDate) {
             let counter = defaults.integer(forKey: Constans.counter)
-        defaults.set(counter + 1, forKey: Constans.counter)
-        continuityCounter = counter + 1
+            defaults.set(counter + 1, forKey: Constans.counter)
+            continuityCounter = counter + 1
             defaults.set(Date(), forKey: "lastDisplayDate")
-     } else {
+        } else {
             continuityCounter = 1 // Resetuj licznik
-         defaults.set(Date(), forKey: "lastDisplayDate")
-         defaults.set(1, forKey: Constans.counter)
+            defaults.set(Date(), forKey: "lastDisplayDate")
+            defaults.set(1, forKey: Constans.counter)
         }
     }
+    
+    func toggleFavourite() {
+        if isFavourite {
+            removeFromFavourites()
+        } else {
+            addToFavourites()
+        }
+        isFavourite.toggle()
+        refreshFavourites()
+    }
+    
+    private func addToFavourites() {
+        favouritesService.add(affirmationOfTheDay)
+        refreshFavourites()
+    }
+    
+    private func removeFromFavourites() {
+        favouritesService.remove(affirmationOfTheDay)
+        refreshFavourites()
+    }
+    
+    private func refreshFavourites() {
+        getFavourites()
+        isFavourite = favourites.contains(affirmationOfTheDay)
+        favouritesService.fetch()
+    }
+    
 }
