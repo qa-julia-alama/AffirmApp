@@ -54,6 +54,9 @@ struct AffirmationView: View {
                 }
                     Spacer()
                 } // VStack
+            .onAppear {
+                viewModel.getFavourites()
+            }
             .sheet(isPresented: $isAddAffirmationViewPresented, onDismiss: {
                 viewModel.fetchAffirmations()
             }, content: {
@@ -74,9 +77,9 @@ struct AffirmationView: View {
                     }, label: {
                         Image(systemName: "plus")
                     })
-                }
+                } // ToolbarItem
                 
-            } //toolbar
+            } // toolbar
             
             }
            

@@ -17,6 +17,9 @@ struct AffirmationOfTheDayView: View {
             .fill(Constans.gradient)
             .frame(height: 200)
             .shadow(radius: 20)
+            .onAppear(perform: {
+                viewModel.getFavourites()
+            })
         //                .padding()
             .overlay(alignment: .topTrailing, content: {
                 Button(action: {
@@ -39,7 +42,6 @@ struct AffirmationOfTheDayView: View {
                         .multilineTextAlignment(.center)
                     
                     Button(action: {
-                        //    viewModel.saveToFavourites()
                         viewModel.toggleFavourite()
                     }, label: {
                         Image(systemName: viewModel.isFavourite ? "star.fill" : "star")

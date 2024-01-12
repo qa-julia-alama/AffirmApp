@@ -81,23 +81,17 @@ final class HomeViewModel: ObservableObject {
             addToFavourites()
         }
         isFavourite.toggle()
-        refreshFavourites()
+        getFavourites()
     }
     
     private func addToFavourites() {
         favouritesService.add(affirmationOfTheDay)
-        refreshFavourites()
+        getFavourites()
     }
     
     private func removeFromFavourites() {
         favouritesService.remove(affirmationOfTheDay)
-        refreshFavourites()
-    }
-    
-    private func refreshFavourites() {
         getFavourites()
-        isFavourite = favourites.contains(affirmationOfTheDay)
-        favouritesService.fetch()
     }
     
 }
