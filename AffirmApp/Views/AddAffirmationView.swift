@@ -38,8 +38,8 @@ struct AddAffirmationView: View {
                     Text("Zapisz")
                 })
                 
-            }
-        }
+            } //VStack
+        } //ZStack
     }
 }
 

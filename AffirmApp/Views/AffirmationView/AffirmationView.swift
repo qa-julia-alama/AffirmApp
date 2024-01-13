@@ -19,6 +19,8 @@ struct AffirmationView: View {
     @State var textFieldText: String = ""
     @State private var isAddAffirmationViewPresented: Bool = false
     @State private var pickerTab: PickerTab = .moje
+    @State private var isEditViewPresented: Bool = false
+    @State private var selectedAffirmationIndex: Int?
     
     var body: some View {
         NavigationView {
@@ -34,13 +36,43 @@ struct AffirmationView: View {
                 switch pickerTab {
                 case .moje:
                     List {
-                        ForEach(viewModel.savedEntities, id: \.self) { affirmation in
-                            Text(affirmation.name ?? "NO NAME")
+                        ForEach(viewModel.savedEntities.indices, id: \.self) { index in
+                            Text(viewModel.savedEntities[index].name ?? "NO NAME")
+                                .onLongPressGesture {
+                                    self.selectedAffirmationIndex = index
+                                    self.textFieldText = viewModel.savedEntities[index].name ?? ""
+                                    self.isEditViewPresented = true
+                                }
                         }
                         .onDelete { indexSet in
                             viewModel.deleteAffirmation(offsets: indexSet)
                         }
-                        } // List
+                    } // List
+                    .sheet(isPresented: $isEditViewPresented, onDismiss: {
+                        viewModel.fetchAffirmations()
+                    }) {
+                        if #available(iOS 16.0, *) {
+                            EditAffirmationView(text: $textFieldText, onSave: {
+                                if let index = selectedAffirmationIndex {
+                                    viewModel.editAffirmation(index: index, newText: textFieldText)
+                                    isEditViewPresented = false
+                                }
+                            }, onCancel: {
+                                isEditViewPresented = false
+                            })
+                            .presentationDetents([.medium])
+                        } else {
+                            EditAffirmationView(text: $textFieldText, onSave: {
+                                if let index = selectedAffirmationIndex {
+                                    viewModel.editAffirmation(index: index, newText: textFieldText)
+                                    isEditViewPresented = false
+                                }
+                            }, onCancel: {
+                                isEditViewPresented = false
+                            })
+                        }
+                    }
+    
                     
                 case .ulubione:
                     List {

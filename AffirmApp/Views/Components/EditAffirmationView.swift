@@ -1,0 +1,52 @@
+//
+//  EditAffirmationView.swift
+//  AffirmApp
+//
+//  Created by Julia on 13/01/2024.
+//
+
+import SwiftUI
+
+struct EditAffirmationView: View {
+    @Binding var text: String
+    var onSave: () -> Void
+    var onCancel: () -> Void
+    
+    var body: some View {
+        ZStack {
+            Color.yellow.ignoresSafeArea()
+            VStack (spacing: 30) {
+                Text("Edytuj afirmację")
+                    .fontWeight(.semibold)
+                    .font(.system(size: 30))
+                
+                TextField("Wprowadź afirmację", text: $text, axis: .vertical)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                HStack {
+                    Button("Anuluj", action: onCancel)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.blue)
+                        .frame(height:55)
+                        .frame(maxWidth: .infinity)
+                        .shadow(color: Color.white.opacity(0.10),
+                                radius: 10, x: 0.0, y: 10)
+                    Spacer()
+                    Button("Zapisz", action: onSave)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.blue)
+                        .frame(height:55)
+                        .frame(maxWidth: .infinity)
+                        .shadow(color: Color.white.opacity(0.10),
+                                radius: 10, x: 0.0, y: 10)
+                } // HStack
+                .padding()
+            } // VStack
+        } // ZStack
+    }
+}
+
+#Preview {
+    EditAffirmationView(text: .constant(""), onSave: {}, onCancel: {})
+}

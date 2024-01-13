@@ -16,6 +16,7 @@
 		A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDC2B2CE1E500D46479 /* TabContentView.swift */; };
 		A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDE2B2CE37800D46479 /* HomeView.swift */; };
 		A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */; };
+		A39818F62B52E0F8005C3788 /* EditAffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */; };
 		A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B690F22B41A54D003871B2 /* AffirmationView.swift */; };
 		A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3B690F42B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld */; };
 		A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5B82B27894D0005A134 /* AffirmAppApp.swift */; };
@@ -57,6 +58,7 @@
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		A3614CDE2B2CE37800D46479 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAffirmationView.swift; sourceTree = "<group>"; };
+		A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAffirmationView.swift; sourceTree = "<group>"; };
 		A3B690F22B41A54D003871B2 /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
 		A3B690F52B41A6DD003871B2 /* AffirmationsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AffirmationsContainer.xcdatamodel; sourceTree = "<group>"; };
 		A3CEE5B52B27894D0005A134 /* AffirmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AffirmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 		A3614CE22B2CEB6E00D46479 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */,
 				A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */,
 				A3F4DE362B2E1FC100DA94AE /* AffirmationOfTheDayView.swift in Sources */,
+				A39818F62B52E0F8005C3788 /* EditAffirmationView.swift in Sources */,
 				A3469B412B49A326004B3704 /* AffirmationViewModel.swift in Sources */,
 				A32F2F2A2B30DBB300B635A9 /* HomeViewModel.swift in Sources */,
 				A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */,

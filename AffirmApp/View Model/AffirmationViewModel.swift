@@ -74,4 +74,10 @@ class AffirmationViewModel: ObservableObject {
         getFavourites()
     }
     
+    func editAffirmation(index: Int, newText: String) {
+        guard index >= 0 && index < savedEntities.count else { return }
+        let affirmationEntity = savedEntities[index]
+        affirmationEntity.name = newText
+        saveData()
+    }
 }
