@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A300DBA92B3CA37200BF4FC1 /* FirstLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300DBA82B3CA37200BF4FC1 /* FirstLaunchViewModel.swift */; };
 		A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F272B30D44C00B635A9 /* Constans.swift */; };
 		A32F2F2A2B30DBB300B635A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */; };
 		A3469B412B49A326004B3704 /* AffirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B402B49A326004B3704 /* AffirmationViewModel.swift */; };
@@ -49,7 +48,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A300DBA82B3CA37200BF4FC1 /* FirstLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewModel.swift; sourceTree = "<group>"; };
 		A32F2F272B30D44C00B635A9 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A3469B402B49A326004B3704 /* AffirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewModel.swift; sourceTree = "<group>"; };
@@ -101,14 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A300DBA72B3CA33200BF4FC1 /* FirstLaunchView */ = {
-			isa = PBXGroup;
-			children = (
-				A300DBA82B3CA37200BF4FC1 /* FirstLaunchViewModel.swift */,
-			);
-			path = FirstLaunchView;
-			sourceTree = "<group>";
-		};
 		A32F2F262B30D41B00B635A9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,16 +111,16 @@
 			isa = PBXGroup;
 			children = (
 				A3B690F22B41A54D003871B2 /* AffirmationView.swift */,
+				A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */,
 			);
 			path = AffirmationView;
 			sourceTree = "<group>";
 		};
-		A3614CE22B2CEB6E00D46479 /* Components */ = {
+		A3614CE22B2CEB6E00D46479 /* AddAffirmationView */ = {
 			isa = PBXGroup;
 			children = (
-				A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */,
 			);
-			path = Components;
+			path = AddAffirmationView;
 			sourceTree = "<group>";
 		};
 		A3614CE52B2D094700D46479 /* HomeView */ = {
@@ -214,11 +204,10 @@
 		A3CEE5E82B2791750005A134 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A3469B442B49D82F004B3704 /* AffirmationView */,
-				A300DBA72B3CA33200BF4FC1 /* FirstLaunchView */,
-				A3614CE52B2D094700D46479 /* HomeView */,
-				A3614CE22B2CEB6E00D46479 /* Components */,
 				A3614CDC2B2CE1E500D46479 /* TabContentView.swift */,
+				A3469B442B49D82F004B3704 /* AffirmationView */,
+				A3614CE52B2D094700D46479 /* HomeView */,
+				A3614CE22B2CEB6E00D46479 /* AddAffirmationView */,
 				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
 			);
 			path = Views;
@@ -376,7 +365,6 @@
 			files = (
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
 				A3CEE5C22B27894E0005A134 /* Persistence.swift in Sources */,
-				A300DBA92B3CA37200BF4FC1 /* FirstLaunchViewModel.swift in Sources */,
 				A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */,
 				A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */,
 				A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */,

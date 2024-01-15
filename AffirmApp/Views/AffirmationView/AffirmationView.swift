@@ -14,7 +14,7 @@ enum PickerTab:  StringLiteralType, CaseIterable {
 }
 
 struct AffirmationView: View {
- 
+    
     @StateObject var viewModel = AffirmationViewModel()
     @State var textFieldText: String = ""
     @State private var isAddAffirmationViewPresented: Bool = false
@@ -28,8 +28,8 @@ struct AffirmationView: View {
             VStack(spacing: 20) {
                 Picker("", selection: $pickerTab) {
                     ForEach(PickerTab.allCases, id: \.self) { tab in
-                                Text(tab.rawValue)
-                              }
+                        Text(tab.rawValue)
+                    }
                 }
                 .pickerStyle(.segmented)
                 
@@ -57,9 +57,7 @@ struct AffirmationView: View {
                                     viewModel.editAffirmation(index: index, newText: textFieldText)
                                     isEditViewPresented = false
                                 }
-                            }, onCancel: {
-                                isEditViewPresented = false
-                            })
+                            } )
                             .presentationDetents([.medium])
                         } else {
                             EditAffirmationView(text: $textFieldText, onSave: {
@@ -67,12 +65,10 @@ struct AffirmationView: View {
                                     viewModel.editAffirmation(index: index, newText: textFieldText)
                                     isEditViewPresented = false
                                 }
-                            }, onCancel: {
-                                isEditViewPresented = false
                             })
                         }
                     }
-    
+                    
                     
                 case .ulubione:
                     List {
@@ -82,10 +78,10 @@ struct AffirmationView: View {
                         .onDelete { indexSet in
                             viewModel.deleteFavourite(offsets: indexSet)
                         }
-                        } // List
+                    } // List
                 }
-                    Spacer()
-                } // VStack
+                Spacer()
+            } // VStack
             .onAppear {
                 viewModel.getFavourites()
             }
@@ -113,11 +109,11 @@ struct AffirmationView: View {
                 
             } // toolbar
             
-            }
-           
         }
         
     }
+    
+}
 
 
 #Preview {
