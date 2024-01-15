@@ -15,12 +15,13 @@ enum PickerTab:  StringLiteralType, CaseIterable {
 
 struct AffirmationView: View {
     
-    @StateObject var viewModel = AffirmationViewModel()
+    @EnvironmentObject var viewModel: AffirmationViewModel
     @State var textFieldText: String = ""
     @State private var isAddAffirmationViewPresented: Bool = false
     @State private var pickerTab: PickerTab = .moje
     @State private var isEditViewPresented: Bool = false
     @State private var selectedAffirmationIndex: Int?
+    @State private var isAffirmationInProgress: Bool = false
     
     var body: some View {
         NavigationView {
@@ -32,22 +33,31 @@ struct AffirmationView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                Button {
+                    isAffirmationInProgress.toggle()
+                } label: {
+                    Text("Zaczynam")
+                }
+
                 
                 switch pickerTab {
                 case .moje:
                     List {
                         ForEach(viewModel.savedEntities.indices, id: \.self) { index in
-                            Text(viewModel.savedEntities[index].name ?? "NO NAME")
-                                .onLongPressGesture {
-                                    self.selectedAffirmationIndex = index
-                                    self.textFieldText = viewModel.savedEntities[index].name ?? ""
-                                    self.isEditViewPresented = true
-                                }
+                            AffirmationListItemView(affirmation: viewModel.savedEntities[index], shouldShowSelection: $isAffirmationInProgress)
+                                .listRowSeparator(.hidden)
+                               // .onLongPressGesture {
+          //                          self.selectedAffirmationIndex = index
+             //                       self.textFieldText = viewModel.savedEntities[index].name ?? ""
+                               //     self.isEditViewPresented = true
+                 //               }
                         }
                         .onDelete { indexSet in
                             viewModel.deleteAffirmation(offsets: indexSet)
                         }
                     } // List
+                    .listStyle(PlainListStyle())
+                    .background(Color.white)
                     .sheet(isPresented: $isEditViewPresented, onDismiss: {
                         viewModel.fetchAffirmations()
                     }) {
@@ -82,6 +92,13 @@ struct AffirmationView: View {
                 }
                 Spacer()
             } // VStack
+            .alert(isPresented: $viewModel.shouldShowPopup) {
+                    Alert(
+                      title: Text("Przyjacielu!"),
+                      message: Text("Twój postęp tworzenia nawyku wynosi: \(viewModel.continuityCounter) dzień"),
+                      dismissButton: .default(Text("OK"))
+                    )
+                  } // alert
             .onAppear {
                 viewModel.getFavourites()
             }

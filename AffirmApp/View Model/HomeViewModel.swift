@@ -18,7 +18,6 @@ final class HomeViewModel: ObservableObject {
     
     init() {
         affirmationOfTheDay = getRandomAffirmation()
-        checkPopupDisplay()
     }
     
     func getRandomAffirmation() -> Affirmation {

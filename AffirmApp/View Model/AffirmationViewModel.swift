@@ -14,6 +14,10 @@ class AffirmationViewModel: ObservableObject {
     @Published var savedEntities: [AffirmationEntity] = []
     @Published var favourites: [Affirmation] = []
     private var favouritesService = FavouritesService.shared
+    @Published var savedEntitiesInProgress: [AffirmationEntity: Bool] = [:]
+    @Published var shouldShowPopup = false
+    @Published var continuityCounter: Int = 0
+    private var affirmationCounter: Int = 0
     
     init() {
         container = NSPersistentContainer(name:  "AffirmationsContainer")
@@ -26,7 +30,8 @@ class AffirmationViewModel: ObservableObject {
         }
         fetchAffirmations()
         getFavourites()
-        print("init")
+        addEntitiesInProgress()
+        
     } // init
     
     func fetchAffirmations() {
@@ -43,16 +48,18 @@ class AffirmationViewModel: ObservableObject {
         let newAffirmation = AffirmationEntity(context: container.viewContext)
         newAffirmation.name = text
         saveData()
+        savedEntitiesInProgress[newAffirmation] = false
     }
     
     
     func deleteAffirmation(offsets: IndexSet) {
-            guard let index = offsets.first else { return }
-            let affirmationEntity = savedEntities[index]
-            container.viewContext.delete(affirmationEntity)
-            saveData()
-        }
- 
+        guard let index = offsets.first else { return }
+        let affirmationEntity = savedEntities[index]
+        container.viewContext.delete(affirmationEntity)
+        saveData()
+        savedEntitiesInProgress.removeValue(forKey: affirmationEntity)
+    }
+    
     func saveData() {
         do {
             try container.viewContext.save()
@@ -79,5 +86,50 @@ class AffirmationViewModel: ObservableObject {
         let affirmationEntity = savedEntities[index]
         affirmationEntity.name = newText
         saveData()
+    }
+    func toggleAffirmation(_ affirmation: AffirmationEntity, value: Bool) {
+        savedEntitiesInProgress[affirmation] = value
+        if value == true {
+            affirmationCounter += 1
+        } else {
+            affirmationCounter -= 1
+        }
+        checkAffirmationCounter()
+    }
+    func isInProgress(_ affirmation: AffirmationEntity) -> Bool {
+        return savedEntitiesInProgress[affirmation] ?? false
+    }
+    func addEntitiesInProgress() {
+        for affirmation in savedEntities {
+            savedEntitiesInProgress[affirmation] = false
+        }
+    }
+    func checkAffirmationCounter() {
+        if affirmationCounter == 5 {
+            checkPopupDisplay()
+        }
+    }
+    private func checkPopupDisplay() {
+        let defaults = UserDefaults.standard
+        let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
+        if !Calendar.current.isDateInToday(lastDisplayDate) {
+            shouldShowPopup = true
+            // Aktualizacja licznika ciągłości
+            updateContinuityCounter()
+        }
+    }
+    private func updateContinuityCounter() {
+        let defaults = UserDefaults.standard
+        let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
+        if Calendar.current.isDateInYesterday(lastDisplayDate) {
+            let counter = defaults.integer(forKey: Constans.counter)
+            defaults.set(counter + 1, forKey: Constans.counter)
+            continuityCounter = counter + 1
+            defaults.set(Date(), forKey: "lastDisplayDate")
+        } else {
+            continuityCounter = 1 // Resetuj licznik
+            defaults.set(Date(), forKey: "lastDisplayDate")
+            defaults.set(1, forKey: Constans.counter)
+        }
     }
 }

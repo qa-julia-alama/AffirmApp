@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabContentView: View {
+    
+    @StateObject var viewModel = AffirmationViewModel()
+    
     var body: some View {
         
         TabView {
@@ -20,6 +23,7 @@ struct TabContentView: View {
                 .tabItem {
                     Label("Affirmations", systemImage: "heart.fill")
                 }
+                .environmentObject(viewModel)
         } //TabView
         
         
