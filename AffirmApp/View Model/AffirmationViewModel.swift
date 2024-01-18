@@ -15,6 +15,7 @@ class AffirmationViewModel: ObservableObject {
     @Published var favourites: [Affirmation] = []
     private var favouritesService = FavouritesService.shared
     @Published var savedEntitiesInProgress: [AffirmationEntity: Bool] = [:]
+    @Published var savedFavouritesInProgress: [Affirmation: Bool] = [:]
     @Published var shouldShowPopup = false
     @Published var continuityCounter: Int = 0
     private var affirmationCounter: Int = 0
@@ -31,6 +32,7 @@ class AffirmationViewModel: ObservableObject {
         fetchAffirmations()
         getFavourites()
         addEntitiesInProgress()
+        addFavouritesInProgress()
         
     } // init
     
@@ -87,6 +89,8 @@ class AffirmationViewModel: ObservableObject {
         affirmationEntity.name = newText
         saveData()
     }
+
+    
     func toggleAffirmation(_ affirmation: AffirmationEntity, value: Bool) {
         savedEntitiesInProgress[affirmation] = value
         if value == true {
@@ -96,14 +100,37 @@ class AffirmationViewModel: ObservableObject {
         }
         checkAffirmationCounter()
     }
+    
+    func toggleAffirmation(_ affirmation: Affirmation, value: Bool) {
+        savedFavouritesInProgress[affirmation] = value
+        if value == true {
+            affirmationCounter += 1
+        } else {
+            affirmationCounter -= 1
+        }
+        checkAffirmationCounter()
+    }
+    
     func isInProgress(_ affirmation: AffirmationEntity) -> Bool {
         return savedEntitiesInProgress[affirmation] ?? false
     }
+    
+    func isInProgress(_ affirmation: Affirmation) -> Bool {
+        return savedFavouritesInProgress[affirmation] ?? false
+    }
+    
     func addEntitiesInProgress() {
         for affirmation in savedEntities {
             savedEntitiesInProgress[affirmation] = false
         }
     }
+    
+    func addFavouritesInProgress() {
+        for affirmation in favourites {
+            savedFavouritesInProgress[affirmation] = false
+        }
+    }
+    
     func checkAffirmationCounter() {
         if affirmationCounter == 5 {
             checkPopupDisplay()

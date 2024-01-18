@@ -36,21 +36,16 @@ struct AffirmationView: View {
                 Button {
                     isAffirmationInProgress.toggle()
                 } label: {
-                    Text("Zaczynam")
+                    Text(isAffirmationInProgress ? "Koniec" : "Zaczynam")
                 }
 
                 
                 switch pickerTab {
                 case .moje:
                     List {
-                        ForEach(viewModel.savedEntities.indices, id: \.self) { index in
-                            AffirmationListItemView(affirmation: viewModel.savedEntities[index], shouldShowSelection: $isAffirmationInProgress)
+                        ForEach(viewModel.savedEntities, id: \.self) { affirmation in
+                            AffirmationListItemView(affirmation: affirmation, shouldShowSelection: $isAffirmationInProgress)
                                 .listRowSeparator(.hidden)
-                               // .onLongPressGesture {
-          //                          self.selectedAffirmationIndex = index
-             //                       self.textFieldText = viewModel.savedEntities[index].name ?? ""
-                               //     self.isEditViewPresented = true
-                 //               }
                         }
                         .onDelete { indexSet in
                             viewModel.deleteAffirmation(offsets: indexSet)
@@ -82,13 +77,16 @@ struct AffirmationView: View {
                     
                 case .ulubione:
                     List {
-                        ForEach($viewModel.favourites, id: \.self) { affirmation in
-                            Text(affirmation.wrappedValue.description)
+                        ForEach(viewModel.favourites, id: \.id) { affirmation in
+                            AffirmationFavListItem(affirmation: affirmation, shouldShowSelection: $isAffirmationInProgress)
+                                .listRowSeparator(.hidden)
                         }
                         .onDelete { indexSet in
                             viewModel.deleteFavourite(offsets: indexSet)
                         }
                     } // List
+                    .listStyle(PlainListStyle())
+                    .background(Color.white)
                 }
                 Spacer()
             } // VStack
