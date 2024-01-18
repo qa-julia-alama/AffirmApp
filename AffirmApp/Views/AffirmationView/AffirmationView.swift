@@ -101,6 +101,7 @@ struct AffirmationView: View {
                   } // alert
             .onAppear {
                 viewModel.getFavourites()
+                viewModel.fetchAffirmations()
             }
             .sheet(isPresented: $isAddAffirmationViewPresented, onDismiss: {
                 viewModel.fetchAffirmations()
