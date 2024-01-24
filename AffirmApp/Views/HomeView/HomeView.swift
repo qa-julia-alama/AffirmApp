@@ -26,13 +26,7 @@ struct HomeView: View {
                     }
                     
                 } //ZStack
-                .alert(isPresented: $viewModel.shouldShowPopup) {
-                    Alert(
-                        title: Text("Przyjacielu!"),
-                        message: Text("Twój postęp tworzenia nawyku wynosi: \(viewModel.continuityCounter) dzień"),
-                        dismissButton: .default(Text("OK"))
-                    )
-                }
+            
                 .sheet(isPresented: $isAddAffirmationViewPresented, content: {
                     if #available(iOS 16.0, *) {
                         AddAffirmationView()

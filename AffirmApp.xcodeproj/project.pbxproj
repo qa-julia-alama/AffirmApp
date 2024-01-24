@@ -29,6 +29,7 @@
 		A3CEE5D92B27894E0005A134 /* AffirmAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5D82B27894E0005A134 /* AffirmAppUITests.swift */; };
 		A3CEE5DB2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5DA2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift */; };
 		A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5EA2B27921F0005A134 /* Affirmation.swift */; };
+		A3F272232B5D81C1002A7254 /* AffirmationProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F272222B5D81C1002A7254 /* AffirmationProgressBarView.swift */; };
 		A3F4DE362B2E1FC100DA94AE /* AffirmationOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4DE352B2E1FC100DA94AE /* AffirmationOfTheDayView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		A3CEE5D82B27894E0005A134 /* AffirmAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmAppUITests.swift; sourceTree = "<group>"; };
 		A3CEE5DA2B27894E0005A134 /* AffirmAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A3CEE5EA2B27921F0005A134 /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
+		A3F272222B5D81C1002A7254 /* AffirmationProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationProgressBarView.swift; sourceTree = "<group>"; };
 		A3F4DE352B2E1FC100DA94AE /* AffirmationOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationOfTheDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */,
 				A3585FC12B55BA0B00952A8B /* AffirmationListItemView.swift */,
 				A34964C62B59CB3300194914 /* AffirmationFavListItem.swift */,
+				A3F272222B5D81C1002A7254 /* AffirmationProgressBarView.swift */,
 			);
 			path = AffirmationView;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */,
 				A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */,
 				A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */,
+				A3F272232B5D81C1002A7254 /* AffirmationProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

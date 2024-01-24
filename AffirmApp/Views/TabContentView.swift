@@ -25,8 +25,6 @@ struct TabContentView: View {
                 }
                 .environmentObject(viewModel)
         } //TabView
-        
-        
     }
 }
 #Preview {

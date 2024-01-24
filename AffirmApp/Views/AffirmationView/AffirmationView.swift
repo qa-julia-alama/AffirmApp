@@ -23,6 +23,18 @@ struct AffirmationView: View {
     @State private var selectedAffirmationIndex: Int?
     @State private var isAffirmationInProgress: Bool = false
     
+    private var totalAffirmationsCount: Int {
+        viewModel.savedEntitiesInProgress.count + viewModel.savedFavouritesInProgress.count
+    }
+    
+    private var progress: CGFloat {
+        let selectedEntitiesCount = viewModel.savedEntitiesInProgress.filter { $0.value }.count
+        let selectedFavouritesCount = viewModel.savedFavouritesInProgress.filter { $0.value }.count
+        let selectedCount = selectedEntitiesCount + selectedFavouritesCount
+        let totalCount = viewModel.savedEntities.count + viewModel.favourites.count
+        return totalCount > 0 ? CGFloat(selectedCount) / CGFloat(totalCount) : 0
+    }
+    
     var body: some View {
         NavigationView {
             
@@ -38,6 +50,9 @@ struct AffirmationView: View {
                 } label: {
                     Text(isAffirmationInProgress ? "Koniec" : "Zaczynam")
                 }
+                AffirmationProgressBarView(progress: progress)
+                    .frame(height: 20)
+                    .padding(.horizontal)
 
                 
                 switch pickerTab {
