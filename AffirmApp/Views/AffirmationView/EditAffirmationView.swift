@@ -19,12 +19,12 @@ struct EditAffirmationView: View {
                     .fontWeight(.semibold)
                     .font(.system(size: 30))
                 
-                TextField("Wprowadź afirmację", text: $text, axis: .vertical)
+                TextField("Wprowadź afirmację", text: $text)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
                 Button("Zapisz", action: onSave)
-                    .fontWeight(.semibold)
+                    .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(.blue)
                     .frame(height:55)
                     .frame(maxWidth: .infinity)

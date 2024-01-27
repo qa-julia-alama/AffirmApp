@@ -22,11 +22,18 @@ struct AddAffirmationView: View {
                 Text("Dodaj afirmację")
                     .fontWeight(.semibold)
                     .font(.system(size: 30))
+                if #available(iOS 16.0, *) {
+                    TextField("Wpisz afirmację", text: $newAffirmation, axis: .vertical)
                     
-                TextField("Wpisz afirmację", text: $newAffirmation, axis: .vertical)
-
+                        .textFieldStyle(.roundedBorder)
+                        .padding()
+                } else {
+                    TextField(text: $newAffirmation) {
+                        Text("Wpisz afirmację")
+                    }
                     .textFieldStyle(.roundedBorder)
                     .padding()
+                }
                                     
                 
                 Button(action: {
