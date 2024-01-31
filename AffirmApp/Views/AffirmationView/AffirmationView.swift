@@ -22,6 +22,8 @@ struct AffirmationView: View {
     @State private var isEditViewPresented: Bool = false
     @State private var selectedAffirmationIndex: Int?
     @State private var isAffirmationInProgress: Bool = false
+
+
     
     private var totalAffirmationsCount: Int {
         viewModel.savedEntitiesInProgress.count + viewModel.savedFavouritesInProgress.count
@@ -147,6 +149,6 @@ struct AffirmationView: View {
 }
 
 
-#Preview {
-    AffirmationView()
-}
+//#Preview {
+   // AffirmationView()
+//}
