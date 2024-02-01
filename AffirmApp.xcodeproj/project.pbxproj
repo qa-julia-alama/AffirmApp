@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F272B30D44C00B635A9 /* Constans.swift */; };
 		A32F2F2A2B30DBB300B635A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */; };
-		A33EC5402B686DC10064F867 /* EditAffirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EC53F2B686DC10064F867 /* EditAffirmationViewModel.swift */; };
 		A3469B412B49A326004B3704 /* AffirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B402B49A326004B3704 /* AffirmationViewModel.swift */; };
 		A3469B432B49B39B004B3704 /* AddAffirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */; };
 		A3469B462B49E17B004B3704 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B452B49E17B004B3704 /* FavouritesService.swift */; };
@@ -54,7 +53,6 @@
 /* Begin PBXFileReference section */
 		A32F2F272B30D44C00B635A9 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		A33EC53F2B686DC10064F867 /* EditAffirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAffirmationViewModel.swift; sourceTree = "<group>"; };
 		A3469B402B49A326004B3704 /* AffirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewModel.swift; sourceTree = "<group>"; };
 		A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAffirmationViewModel.swift; sourceTree = "<group>"; };
 		A3469B452B49E17B004B3704 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */,
 				A3469B402B49A326004B3704 /* AffirmationViewModel.swift */,
 				A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */,
-				A33EC53F2B686DC10064F867 /* EditAffirmationViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -378,7 +375,6 @@
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
 				A3CEE5C22B27894E0005A134 /* Persistence.swift in Sources */,
 				A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */,
-				A33EC5402B686DC10064F867 /* EditAffirmationViewModel.swift in Sources */,
 				A3585FC22B55BA0B00952A8B /* AffirmationListItemView.swift in Sources */,
 				A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */,
 				A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */,

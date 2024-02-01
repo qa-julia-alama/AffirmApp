@@ -9,29 +9,30 @@ import SwiftUI
 
 struct AffirmationListItemView: View {
     
-      @EnvironmentObject var viewModel: AffirmationViewModel
-      var affirmation: AffirmationEntity
-      @State var isSelected: Bool = false
-      @Binding var shouldShowSelection: Bool
+    @EnvironmentObject var viewModel: AffirmationViewModel
+    var affirmation: AffirmationEntity
+    @State var isSelected: Bool = false
+    @Binding var shouldShowSelection: Bool
     
     var body: some View {
         HStack {
-              Text(affirmation.name ?? "NO NAME")
-              Spacer()
-              Button(action: {
+            Text(affirmation.name ?? "NO NAME")
+            Spacer()
+            Button(action: {
                 isSelected.toggle()
                 viewModel.toggleAffirmation(affirmation, value: isSelected)
-              }, label: {
+            }, label: {
                 if shouldShowSelection {
-                  Image(systemName: isSelected ? "sun.max.fill" : "sun.max")
+                    Image(systemName: isSelected ? "sun.max.fill" : "sun.max")
                 }
-              })
-            } // hstack
-            .onAppear(perform: {
-              isSelected = viewModel.isInProgress(affirmation)
             })
-            .padding()
-            .background(Color.yellow.cornerRadius(10))
+            .disabled(shouldShowSelection ? false : true)
+        } // hstack
+        .onAppear(perform: {
+            isSelected = viewModel.isInProgress(affirmation)
+        })
+        .padding()
+        .background(Color.yellow.cornerRadius(10))
     }
 }
 

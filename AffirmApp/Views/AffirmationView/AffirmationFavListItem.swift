@@ -13,26 +13,27 @@ struct AffirmationFavListItem: View {
     var affirmation: Affirmation
     @State var isSelected: Bool = false
     @Binding var shouldShowSelection: Bool
-  
-  var body: some View {
-      HStack {
+    
+    var body: some View {
+        HStack {
             Text(affirmation.description)
             Spacer()
             Button(action: {
-              isSelected.toggle()
-              viewModel.toggleAffirmation(affirmation, value: isSelected)
+                isSelected.toggle()
+                viewModel.toggleAffirmation(affirmation, value: isSelected)
             }, label: {
-              if shouldShowSelection {
-                Image(systemName: isSelected ? "sun.max.fill" : "sun.max")
-              }
+                if shouldShowSelection {
+                    Image(systemName: isSelected ? "sun.max.fill" : "sun.max")
+                }
             })
-          } // hstack
-          .onAppear(perform: {
+            .disabled(shouldShowSelection ? false : true)
+        } // hstack
+        .onAppear(perform: {
             isSelected = viewModel.isInProgress(affirmation)
-          })
-          .padding()
-          .background(Color.yellow.cornerRadius(10))
-  }
+        })
+        .padding()
+        .background(Color.yellow.cornerRadius(10))
+    }
 }
 
 #Preview {

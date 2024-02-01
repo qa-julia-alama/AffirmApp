@@ -20,7 +20,7 @@ struct AffirmationView: View {
     @State private var isAddAffirmationViewPresented: Bool = false
     @State private var pickerTab: PickerTab = .moje
     @State private var isEditViewPresented: Bool = false
-    @State private var selectedAffirmationIndex: Int?
+    @State private var affirmationToEdit: String = ""
     @State private var isAffirmationInProgress: Bool = false
 
 
@@ -52,10 +52,12 @@ struct AffirmationView: View {
                 } label: {
                     Text(isAffirmationInProgress ? "Koniec" : "Zaczynam")
                 }
-                AffirmationProgressBarView(progress: progress)
-                    .frame(height: 20)
-                    .padding(.horizontal)
-
+                
+                if isAffirmationInProgress {
+                    AffirmationProgressBarView(progress: progress)
+                        .frame(height: 20)
+                        .padding(.horizontal)
+                }
                 
                 switch pickerTab {
                 case .moje:
@@ -63,6 +65,14 @@ struct AffirmationView: View {
                         ForEach(viewModel.savedEntities, id: \.self) { affirmation in
                             AffirmationListItemView(affirmation: affirmation, shouldShowSelection: $isAffirmationInProgress)
                                 .listRowSeparator(.hidden)
+                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    Button {
+                                        isEditViewPresented.toggle()
+                                        affirmationToEdit = affirmation.name ?? ""
+                                    } label: {
+                                        Label("", systemImage: "pencil")
+                                    }
+                                }
                         }
                         .onDelete { indexSet in
                             viewModel.deleteAffirmation(offsets: indexSet)
@@ -74,20 +84,10 @@ struct AffirmationView: View {
                         viewModel.fetchAffirmations()
                     }) {
                         if #available(iOS 16.0, *) {
-                            EditAffirmationView(text: $textFieldText, onSave: {
-                                if let index = selectedAffirmationIndex {
-                                    viewModel.editAffirmation(index: index, newText: textFieldText)
-                                    isEditViewPresented = false
-                                }
-                            } )
+                            EditAffirmationView(text: $affirmationToEdit)
                             .presentationDetents([.medium])
                         } else {
-                            EditAffirmationView(text: $textFieldText, onSave: {
-                                if let index = selectedAffirmationIndex {
-                                    viewModel.editAffirmation(index: index, newText: textFieldText)
-                                    isEditViewPresented = false
-                                }
-                            })
+                            EditAffirmationView(text: $textFieldText)
                         }
                     }
                     

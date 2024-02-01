@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct EditAffirmationView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AffirmationViewModel
     @Binding var text: String
-    var onSave: () -> Void
+    @State private var originalText: String = ""
     
     var body: some View {
         ZStack {
@@ -22,20 +24,27 @@ struct EditAffirmationView: View {
                 TextField("Wprowadź afirmację", text: $text)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                
-                Button("Zapisz", action: onSave)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.blue)
-                    .frame(height:55)
-                    .frame(maxWidth: .infinity)
-                    .shadow(color: Color.white.opacity(0.10),
-                            radius: 10, x: 0.0, y: 10)
+                Button {
+                    viewModel.editAffirmation(originalText: originalText, newText: text)
+                    dismiss()
+                } label: {
+                    Text("Zapisz")
+                }
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundColor(.blue)
+                .frame(height:55)
+                .frame(maxWidth: .infinity)
+                .shadow(color: Color.white.opacity(0.10),
+                        radius: 10, x: 0.0, y: 10)
             } // VStack
         } // ZStack
+        .onAppear {
+            originalText = text
+        }
     }
 }
 
 
 #Preview {
-    EditAffirmationView(text: .constant(""), onSave: {})
+    EditAffirmationView(text: .constant(""))
 }

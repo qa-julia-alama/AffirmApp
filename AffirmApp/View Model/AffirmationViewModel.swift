@@ -83,13 +83,18 @@ class AffirmationViewModel: ObservableObject {
         getFavourites()
     }
     
-    func editAffirmation(index: Int, newText: String) {
-        guard index >= 0 && index < savedEntities.count else { return }
-        let affirmationEntity = savedEntities[index]
-        affirmationEntity.name = newText
+    func editAffirmation(originalText: String, newText: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AffirmationEntity")
+        request.predicate = NSPredicate(format: "name == %@", originalText)
+        do {
+            let fetchResult = try container.viewContext.fetch(request) as? [NSManagedObject]
+            fetchResult?[0].setValue(newText, forKey: "name")
+        } catch {
+            print("Error fetching from data base: \(error)")
+        }
         saveData()
     }
-
+    
     
     func toggleAffirmation(_ affirmation: AffirmationEntity, value: Bool) {
         savedEntitiesInProgress[affirmation] = value
