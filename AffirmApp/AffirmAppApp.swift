@@ -9,13 +9,17 @@ import SwiftUI
 
 @main
 struct AffirmAppApp: App {
+    @AppStorage("shouldShowWelcome") var shouldShowWelcome: Bool = true
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            TabContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            
+            if shouldShowWelcome {
+                WelcomeView()
+            } else {
+                TabContentView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            }
         }
     }
 }

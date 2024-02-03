@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
+    @AppStorage("username") var username: String = ""
     @State private var isAddAffirmationViewPresented: Bool = false
     var body: some View {
         
@@ -21,6 +22,7 @@ struct HomeView: View {
                         
                         AffirmationOfTheDayView()
                             .environmentObject(viewModel)
+                        
                         Spacer()
                         
                     }
@@ -35,8 +37,9 @@ struct HomeView: View {
                         AddAffirmationView()
                     }
                 })
-                    
-                .navigationTitle("Witaj przyjacielu!")
+        
+                .navigationTitle("Witaj \(username)!")
+
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button(action: {
@@ -53,6 +56,7 @@ struct HomeView: View {
             } //NavigationView
             
         }
+    
     }
 
 
