@@ -6,18 +6,20 @@
 //
 
 import Foundation
+import UserNotifications
 
 final class WelcomeViewModel: ObservableObject {
+    let notificationManager = NotificationManager.shared
     
     func saveUsername(_ name: String) {
         UserDefaults.standard.setValue(name, forKey: "username")
     }
     
-    func setupLocalNotifications() {
-        // logika z notyfikacji
-    }
-    
     func setupWelcome() {
         UserDefaults.standard.setValue(false, forKey: "shouldShowWelcome")
+    }
+    
+    func askForPermission() {
+        notificationManager.askForPermission()
     }
 }

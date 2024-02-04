@@ -13,6 +13,8 @@
 		A3469B432B49B39B004B3704 /* AddAffirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */; };
 		A3469B462B49E17B004B3704 /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B452B49E17B004B3704 /* FavouritesService.swift */; };
 		A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34964C62B59CB3300194914 /* AffirmationFavListItem.swift */; };
+		A34BB4342B6FD92600105F8E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB4332B6FD92600105F8E /* NotificationManager.swift */; };
+		A34BB4372B6FF73800105F8E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB4362B6FF73800105F8E /* SettingsView.swift */; };
 		A3585FC22B55BA0B00952A8B /* AffirmationListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3585FC12B55BA0B00952A8B /* AffirmationListItemView.swift */; };
 		A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDC2B2CE1E500D46479 /* TabContentView.swift */; };
 		A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDE2B2CE37800D46479 /* HomeView.swift */; };
@@ -61,6 +63,8 @@
 		A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAffirmationViewModel.swift; sourceTree = "<group>"; };
 		A3469B452B49E17B004B3704 /* FavouritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesService.swift; sourceTree = "<group>"; };
 		A34964C62B59CB3300194914 /* AffirmationFavListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationFavListItem.swift; sourceTree = "<group>"; };
+		A34BB4332B6FD92600105F8E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A34BB4362B6FF73800105F8E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A3585FC12B55BA0B00952A8B /* AffirmationListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationListItemView.swift; sourceTree = "<group>"; };
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		A3614CDE2B2CE37800D46479 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				A3614CE52B2D094700D46479 /* HomeView */,
 				A3614CE22B2CEB6E00D46479 /* AddAffirmationView */,
 				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
+				A34BB4362B6FF73800105F8E /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				A3CEE5C12B27894E0005A134 /* Persistence.swift */,
 				A3B690F42B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld */,
 				A3469B452B49E17B004B3704 /* FavouritesService.swift */,
+				A34BB4332B6FD92600105F8E /* NotificationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
+				A34BB4372B6FF73800105F8E /* SettingsView.swift in Sources */,
 				A3CEE5C22B27894E0005A134 /* Persistence.swift in Sources */,
 				A3E4D55F2B6D5D36002E787C /* WelcomeView.swift in Sources */,
 				A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */,
@@ -406,6 +413,7 @@
 				A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */,
 				A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */,
 				A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */,
+				A34BB4342B6FD92600105F8E /* NotificationManager.swift in Sources */,
 				A3F272232B5D81C1002A7254 /* AffirmationProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

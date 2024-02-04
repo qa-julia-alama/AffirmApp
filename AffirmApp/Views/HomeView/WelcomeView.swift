@@ -27,25 +27,22 @@ struct WelcomeView: View {
                         .font(.system(size: 20))
                     TextField("", text: $username)
                         .textFieldStyle(.roundedBorder)
-                        .padding(30)
+                        .padding()
                         .shadow(radius: 3)
-                } // VStack3 (hstack)
+                } // VStack3
                 
                 VStack {
                     Toggle("Czy chcesz dostawac przypomnienia o codziennej afirmacji?",
                            isOn: $shouldSendNotifications)
-                    .padding(30)
+                    .padding()
                     .tint(.yellow)
                     .shadow(radius: 3)
-                    Text("Powiadomienia mozesz pozniej wylaczyc w ustawieniach aplikacji")
+                    Text("Powiadomienia możesz poźniej wylaczyc w ustawieniach aplikacji")
                         .font(.caption)
                 } //VStack2
                 
                 Button(action: {
                     viewModel.saveUsername(username)
-                    if shouldSendNotifications {
-                        viewModel.setupLocalNotifications()
-                    }
                     viewModel.setupWelcome()
                 }, label: {
                     Text("Start")
@@ -54,11 +51,14 @@ struct WelcomeView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.white)
             } // VStack1
-                .padding(30)
+                .padding()
+            
+                .onChange(of: shouldSendNotifications, perform: { _ in
+                viewModel.askForPermission()
+            })
+            
         } // ZStack
-        .padding(30)
     } //View2
-        
 } // View1
 
 #Preview {

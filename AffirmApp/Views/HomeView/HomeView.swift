@@ -49,8 +49,14 @@ struct HomeView: View {
                         }, label: {
                             Image(systemName: "plus")
                         })
+                    } // ToolbarItem
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {
+                            // Settings
+                        }, label: {
+                            Image(systemName: "gearshape")
+                        })
                     }
-                    
                 } //toolbar
 
             } //NavigationView
