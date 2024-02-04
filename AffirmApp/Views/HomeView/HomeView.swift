@@ -51,11 +51,12 @@ struct HomeView: View {
                         })
                     } // ToolbarItem
                     ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            // Settings
-                        }, label: {
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
                             Image(systemName: "gearshape")
-                        })
+                        }
+
                     }
                 } //toolbar
 

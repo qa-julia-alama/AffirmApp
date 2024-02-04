@@ -22,4 +22,8 @@ final class WelcomeViewModel: ObservableObject {
     func askForPermission() {
         notificationManager.askForPermission()
     }
+
+    func shouldShowNotification(_ status: Bool) {
+        notificationManager.shouldShowNotification(status)
+    }
 }

@@ -15,6 +15,10 @@
 		A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34964C62B59CB3300194914 /* AffirmationFavListItem.swift */; };
 		A34BB4342B6FD92600105F8E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB4332B6FD92600105F8E /* NotificationManager.swift */; };
 		A34BB4372B6FF73800105F8E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB4362B6FF73800105F8E /* SettingsView.swift */; };
+		A34BB43A2B6FFF3200105F8E /* WhiteGroupBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB4392B6FFF3200105F8E /* WhiteGroupBox.swift */; };
+		A34BB43C2B70010200105F8E /* SettingsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB43B2B70010200105F8E /* SettingsSectionHeaderView.swift */; };
+		A34BB43F2B700F5E00105F8E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB43E2B700F5E00105F8E /* SettingsViewModel.swift */; };
+		A34BB4412B7023CE00105F8E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34BB4402B7023CE00105F8E /* OnboardingView.swift */; };
 		A3585FC22B55BA0B00952A8B /* AffirmationListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3585FC12B55BA0B00952A8B /* AffirmationListItemView.swift */; };
 		A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDC2B2CE1E500D46479 /* TabContentView.swift */; };
 		A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDE2B2CE37800D46479 /* HomeView.swift */; };
@@ -33,8 +37,6 @@
 		A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEE5EA2B27921F0005A134 /* Affirmation.swift */; };
 		A3E4D55D2B6D5BB7002E787C /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D55C2B6D5BB7002E787C /* WelcomeViewModel.swift */; };
 		A3E4D55F2B6D5D36002E787C /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E4D55E2B6D5D36002E787C /* WelcomeView.swift */; };
-		A3E4D5612B6D6C30002E787C /* backgroundWithSun.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3E4D5602B6D6C30002E787C /* backgroundWithSun.jpeg */; };
-		A3E4D5632B6D6C56002E787C /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A3E4D5622B6D6C56002E787C /* background.jpeg */; };
 		A3F272232B5D81C1002A7254 /* AffirmationProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F272222B5D81C1002A7254 /* AffirmationProgressBarView.swift */; };
 		A3F4DE362B2E1FC100DA94AE /* AffirmationOfTheDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F4DE352B2E1FC100DA94AE /* AffirmationOfTheDayView.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,10 @@
 		A34BB4332B6FD92600105F8E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A34BB4362B6FF73800105F8E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A34BB4382B6FFA3D00105F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A34BB4392B6FFF3200105F8E /* WhiteGroupBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteGroupBox.swift; sourceTree = "<group>"; };
+		A34BB43B2B70010200105F8E /* SettingsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionHeaderView.swift; sourceTree = "<group>"; };
+		A34BB43E2B700F5E00105F8E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		A34BB4402B7023CE00105F8E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A3585FC12B55BA0B00952A8B /* AffirmationListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationListItemView.swift; sourceTree = "<group>"; };
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		A3614CDE2B2CE37800D46479 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -87,8 +93,6 @@
 		A3CEE5EA2B27921F0005A134 /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
 		A3E4D55C2B6D5BB7002E787C /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		A3E4D55E2B6D5D36002E787C /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		A3E4D5602B6D6C30002E787C /* backgroundWithSun.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundWithSun.jpeg; path = ../../../Downloads/backgroundWithSun.jpeg; sourceTree = "<group>"; };
-		A3E4D5622B6D6C56002E787C /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpeg; path = ../../../Downloads/background.jpeg; sourceTree = "<group>"; };
 		A3F272222B5D81C1002A7254 /* AffirmationProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationProgressBarView.swift; sourceTree = "<group>"; };
 		A3F4DE352B2E1FC100DA94AE /* AffirmationOfTheDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationOfTheDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +142,15 @@
 			path = AffirmationView;
 			sourceTree = "<group>";
 		};
+		A34BB43D2B70011500105F8E /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				A34BB43B2B70010200105F8E /* SettingsSectionHeaderView.swift */,
+				A34BB4362B6FF73800105F8E /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		A3614CE22B2CEB6E00D46479 /* AddAffirmationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,13 +194,11 @@
 				A34BB4382B6FFA3D00105F8E /* Info.plist */,
 				A3CEE5B82B27894D0005A134 /* AffirmAppApp.swift */,
 				A32F2F262B30D41B00B635A9 /* Utilities */,
-				A3CEE5E92B2791800005A134 /* View Model */,
+				A3CEE5E92B2791800005A134 /* ViewModel */,
 				A3CEE5E82B2791750005A134 /* Views */,
 				A3CEE5E72B27914C0005A134 /* Model */,
 				A3CEE5EC2B27982E0005A134 /* Services */,
 				A3CEE5BC2B27894E0005A134 /* Assets.xcassets */,
-				A3E4D5622B6D6C56002E787C /* background.jpeg */,
-				A3E4D5602B6D6C30002E787C /* backgroundWithSun.jpeg */,
 				A3CEE5C32B27894E0005A134 /* AffirmApp.xcdatamodeld */,
 				A3CEE5BE2B27894E0005A134 /* Preview Content */,
 			);
@@ -230,25 +241,28 @@
 		A3CEE5E82B2791750005A134 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A34BB43D2B70011500105F8E /* SettingsView */,
 				A3614CDC2B2CE1E500D46479 /* TabContentView.swift */,
 				A3469B442B49D82F004B3704 /* AffirmationView */,
 				A3614CE52B2D094700D46479 /* HomeView */,
 				A3614CE22B2CEB6E00D46479 /* AddAffirmationView */,
 				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
-				A34BB4362B6FF73800105F8E /* SettingsView.swift */,
+				A34BB4392B6FFF3200105F8E /* WhiteGroupBox.swift */,
+				A34BB4402B7023CE00105F8E /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A3CEE5E92B2791800005A134 /* View Model */ = {
+		A3CEE5E92B2791800005A134 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */,
 				A3469B402B49A326004B3704 /* AffirmationViewModel.swift */,
 				A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */,
 				A3E4D55C2B6D5BB7002E787C /* WelcomeViewModel.swift */,
+				A34BB43E2B700F5E00105F8E /* SettingsViewModel.swift */,
 			);
-			path = "View Model";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A3CEE5EC2B27982E0005A134 /* Services */ = {
@@ -367,9 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3CEE5C02B27894E0005A134 /* Preview Assets.xcassets in Resources */,
-				A3E4D5612B6D6C30002E787C /* backgroundWithSun.jpeg in Resources */,
 				A3CEE5BD2B27894E0005A134 /* Assets.xcassets in Resources */,
-				A3E4D5632B6D6C56002E787C /* background.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,11 +412,13 @@
 				A3E4D55F2B6D5D36002E787C /* WelcomeView.swift in Sources */,
 				A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */,
 				A3585FC22B55BA0B00952A8B /* AffirmationListItemView.swift in Sources */,
+				A34BB43C2B70010200105F8E /* SettingsSectionHeaderView.swift in Sources */,
 				A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */,
 				A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */,
 				A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */,
 				A3F4DE362B2E1FC100DA94AE /* AffirmationOfTheDayView.swift in Sources */,
 				A39818F62B52E0F8005C3788 /* EditAffirmationView.swift in Sources */,
+				A34BB4412B7023CE00105F8E /* OnboardingView.swift in Sources */,
 				A3469B412B49A326004B3704 /* AffirmationViewModel.swift in Sources */,
 				A32F2F2A2B30DBB300B635A9 /* HomeViewModel.swift in Sources */,
 				A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */,
@@ -414,7 +428,9 @@
 				A3E4D55D2B6D5BB7002E787C /* WelcomeViewModel.swift in Sources */,
 				A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */,
 				A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */,
+				A34BB43F2B700F5E00105F8E /* SettingsViewModel.swift in Sources */,
 				A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */,
+				A34BB43A2B6FFF3200105F8E /* WhiteGroupBox.swift in Sources */,
 				A34BB4342B6FD92600105F8E /* NotificationManager.swift in Sources */,
 				A3F272232B5D81C1002A7254 /* AffirmationProgressBarView.swift in Sources */,
 			);

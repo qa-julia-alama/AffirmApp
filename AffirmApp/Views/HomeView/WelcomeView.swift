@@ -44,6 +44,7 @@ struct WelcomeView: View {
                 Button(action: {
                     viewModel.saveUsername(username)
                     viewModel.setupWelcome()
+                    viewModel.shouldShowNotification(shouldSendNotifications)
                 }, label: {
                     Text("Start")
                         .foregroundColor(.black)

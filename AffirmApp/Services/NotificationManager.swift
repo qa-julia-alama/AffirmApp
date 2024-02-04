@@ -31,11 +31,15 @@ class NotificationManager {
         var datComp = DateComponents()
         datComp.hour = hour
         datComp.minute = minute
-        
+
         let trigger = UNCalendarNotificationTrigger(dateMatching: datComp, repeats: true)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
         
+    }
+    
+    func shouldShowNotification(_ status: Bool) {
+        UserDefaults.standard.set(status, forKey: "shouldShowNotification")
     }
 }
