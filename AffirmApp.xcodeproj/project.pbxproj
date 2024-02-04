@@ -65,6 +65,7 @@
 		A34964C62B59CB3300194914 /* AffirmationFavListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationFavListItem.swift; sourceTree = "<group>"; };
 		A34BB4332B6FD92600105F8E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A34BB4362B6FF73800105F8E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A34BB4382B6FFA3D00105F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A3585FC12B55BA0B00952A8B /* AffirmationListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationListItemView.swift; sourceTree = "<group>"; };
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		A3614CDE2B2CE37800D46479 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		A3CEE5B72B27894D0005A134 /* AffirmApp */ = {
 			isa = PBXGroup;
 			children = (
+				A34BB4382B6FFA3D00105F8E /* Info.plist */,
 				A3CEE5B82B27894D0005A134 /* AffirmAppApp.swift */,
 				A32F2F262B30D41B00B635A9 /* Utilities */,
 				A3CEE5E92B2791800005A134 /* View Model */,
@@ -576,9 +578,9 @@
 				DEVELOPMENT_TEAM = SJA6ZA7RX4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AffirmApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -606,9 +608,9 @@
 				DEVELOPMENT_TEAM = SJA6ZA7RX4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AffirmApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
