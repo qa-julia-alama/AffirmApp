@@ -18,7 +18,7 @@ struct OnboardingView: View {
             }
         } //TabView
         .tabViewStyle(.page(indexDisplayMode: .automatic))
-        .background(.black)
+        .background(Color("Color1"))
         .overlay(alignment: .topTrailing) {
             Button(action: {
                 shouldShowOnboarding = false

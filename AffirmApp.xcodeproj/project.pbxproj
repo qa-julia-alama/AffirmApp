@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30223212B71750200DAA6E0 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30223202B71750200DAA6E0 /* HapticManager.swift */; };
 		A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F272B30D44C00B635A9 /* Constans.swift */; };
 		A32F2F2A2B30DBB300B635A9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */; };
 		A3469B412B49A326004B3704 /* AffirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3469B402B49A326004B3704 /* AffirmationViewModel.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A30223202B71750200DAA6E0 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		A32F2F272B30D44C00B635A9 /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		A32F2F292B30DBB300B635A9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A3469B402B49A326004B3704 /* AffirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationViewModel.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				A3B690F42B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld */,
 				A3469B452B49E17B004B3704 /* FavouritesService.swift */,
 				A34BB4332B6FD92600105F8E /* NotificationManager.swift */,
+				A30223202B71750200DAA6E0 /* HapticManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			files = (
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
 				A34BB4372B6FF73800105F8E /* SettingsView.swift in Sources */,
+				A30223212B71750200DAA6E0 /* HapticManager.swift in Sources */,
 				A3CEE5C22B27894E0005A134 /* Persistence.swift in Sources */,
 				A3E4D55F2B6D5D36002E787C /* WelcomeView.swift in Sources */,
 				A3CEE5EB2B27921F0005A134 /* Affirmation.swift in Sources */,

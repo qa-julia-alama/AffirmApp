@@ -24,14 +24,14 @@ class NotificationManager {
     
     func setupLocalNotifications(hour: Int, minute: Int) {
         let content = UNMutableNotificationContent()
-            content.title = "Przyjacielu!"
-            content.subtitle = "Pamiętaj o codzinnych afirmacjach"
+        content.title = "Przyjacielu!"
+        content.subtitle = "Pamiętaj o codzinnych afirmacjach"
         content.sound = UNNotificationSound.default
         
         var datComp = DateComponents()
         datComp.hour = hour
         datComp.minute = minute
-
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: datComp, repeats: true)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)

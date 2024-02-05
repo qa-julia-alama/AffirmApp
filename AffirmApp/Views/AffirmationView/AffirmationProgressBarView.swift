@@ -19,7 +19,7 @@ struct AffirmationProgressBarView: View {
                         .foregroundColor(Color.gray)
 
                     Rectangle().frame(width: min(CGFloat(progress) * geometry.size.width, geometry.size.width), height: geometry.size.height)
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(progress >= 1.0 ? Color.green : Color.blue)
                         .animation(.linear, value: progress)
                 }
                 .cornerRadius(45.0)

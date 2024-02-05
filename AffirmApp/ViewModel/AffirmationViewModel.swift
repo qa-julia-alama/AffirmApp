@@ -19,6 +19,7 @@ class AffirmationViewModel: ObservableObject {
     @Published var shouldShowPopup = false
     @Published var continuityCounter: Int = 0
     private var affirmationCounter: Int = 0
+    let hapticManager = HapticManager.shared
     
     init() {
         container = NSPersistentContainer(name:  "AffirmationsContainer")
@@ -137,10 +138,17 @@ class AffirmationViewModel: ObservableObject {
     }
     
     func checkAffirmationCounter() {
+        let totalAffirmations = savedEntities.count + favourites.count // Łączna liczba afirmacji
+
         if affirmationCounter == 5 {
             checkPopupDisplay()
         }
+        // Sprawdzenie czy wszystkie afirmacje są zaznaczone
+        if affirmationCounter == totalAffirmations {
+            affirmationProgressCompleted() // Wywołanie wibracji, gdy wszystkie afirmacje są zaznaczone
+        }
     }
+    
     private func checkPopupDisplay() {
         let defaults = UserDefaults.standard
         let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
@@ -150,6 +158,7 @@ class AffirmationViewModel: ObservableObject {
             updateContinuityCounter()
         }
     }
+    
     private func updateContinuityCounter() {
         let defaults = UserDefaults.standard
         let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
@@ -163,5 +172,10 @@ class AffirmationViewModel: ObservableObject {
             defaults.set(Date(), forKey: "lastDisplayDate")
             defaults.set(1, forKey: Constans.counter)
         }
+    }
+    
+    func affirmationProgressCompleted() {
+        hapticManager.notification(type: .success)
+        hapticManager.impact(style: .rigid)
     }
 }
