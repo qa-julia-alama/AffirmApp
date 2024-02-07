@@ -22,9 +22,10 @@ struct HomeView: View {
                         
                         AffirmationOfTheDayView()
                             .environmentObject(viewModel)
-                        
+                       
+                        ProgressChartView()
+                            .padding(.top)
                         Spacer()
-                        
                     }
                     
                 } //ZStack
@@ -56,14 +57,10 @@ struct HomeView: View {
                         } label: {
                             Image(systemName: "gearshape")
                         }
-
                     }
                 } //toolbar
-
             } //NavigationView
-            
         }
-    
     }
 
 

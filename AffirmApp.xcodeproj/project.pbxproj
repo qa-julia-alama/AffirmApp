@@ -24,6 +24,10 @@
 		A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDC2B2CE1E500D46479 /* TabContentView.swift */; };
 		A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CDE2B2CE37800D46479 /* HomeView.swift */; };
 		A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */; };
+		A368D1742B740BF5009C2798 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1732B740BF5009C2798 /* UserActivity.swift */; };
+		A368D1762B740C2E009C2798 /* UserActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1752B740C2E009C2798 /* UserActivityService.swift */; };
+		A368D1782B74193F009C2798 /* ProgressChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1772B74193F009C2798 /* ProgressChartView.swift */; };
+		A368D17A2B74278E009C2798 /* ProgressChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1792B74278E009C2798 /* ProgressChartViewModel.swift */; };
 		A39818F62B52E0F8005C3788 /* EditAffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */; };
 		A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B690F22B41A54D003871B2 /* AffirmationView.swift */; };
 		A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3B690F42B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld */; };
@@ -78,6 +82,10 @@
 		A3614CDC2B2CE1E500D46479 /* TabContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentView.swift; sourceTree = "<group>"; };
 		A3614CDE2B2CE37800D46479 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAffirmationView.swift; sourceTree = "<group>"; };
+		A368D1732B740BF5009C2798 /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
+		A368D1752B740C2E009C2798 /* UserActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityService.swift; sourceTree = "<group>"; };
+		A368D1772B74193F009C2798 /* ProgressChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartView.swift; sourceTree = "<group>"; };
+		A368D1792B74278E009C2798 /* ProgressChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartViewModel.swift; sourceTree = "<group>"; };
 		A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAffirmationView.swift; sourceTree = "<group>"; };
 		A3B690F22B41A54D003871B2 /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
 		A3B690F52B41A6DD003871B2 /* AffirmationsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AffirmationsContainer.xcdatamodel; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 			children = (
 				A3614CDE2B2CE37800D46479 /* HomeView.swift */,
 				A3F4DE352B2E1FC100DA94AE /* AffirmationOfTheDayView.swift */,
+				A368D1772B74193F009C2798 /* ProgressChartView.swift */,
 				A3E4D55E2B6D5D36002E787C /* WelcomeView.swift */,
 			);
 			path = HomeView;
@@ -236,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				A3CEE5EA2B27921F0005A134 /* Affirmation.swift */,
+				A368D1732B740BF5009C2798 /* UserActivity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +273,7 @@
 				A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */,
 				A3E4D55C2B6D5BB7002E787C /* WelcomeViewModel.swift */,
 				A34BB43E2B700F5E00105F8E /* SettingsViewModel.swift */,
+				A368D1792B74278E009C2798 /* ProgressChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 				A3469B452B49E17B004B3704 /* FavouritesService.swift */,
 				A34BB4332B6FD92600105F8E /* NotificationManager.swift */,
 				A30223202B71750200DAA6E0 /* HapticManager.swift */,
+				A368D1752B740C2E009C2798 /* UserActivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -409,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A368D1782B74193F009C2798 /* ProgressChartView.swift in Sources */,
 				A3CEE5C52B27894E0005A134 /* AffirmApp.xcdatamodeld in Sources */,
 				A34BB4372B6FF73800105F8E /* SettingsView.swift in Sources */,
 				A30223212B71750200DAA6E0 /* HapticManager.swift in Sources */,
@@ -418,6 +431,7 @@
 				A3585FC22B55BA0B00952A8B /* AffirmationListItemView.swift in Sources */,
 				A34BB43C2B70010200105F8E /* SettingsSectionHeaderView.swift in Sources */,
 				A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */,
+				A368D1762B740C2E009C2798 /* UserActivityService.swift in Sources */,
 				A3614CDF2B2CE37800D46479 /* HomeView.swift in Sources */,
 				A32F2F282B30D44C00B635A9 /* Constans.swift in Sources */,
 				A3F4DE362B2E1FC100DA94AE /* AffirmationOfTheDayView.swift in Sources */,
@@ -428,12 +442,14 @@
 				A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */,
 				A3469B462B49E17B004B3704 /* FavouritesService.swift in Sources */,
 				A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */,
+				A368D17A2B74278E009C2798 /* ProgressChartViewModel.swift in Sources */,
 				A3469B432B49B39B004B3704 /* AddAffirmationViewModel.swift in Sources */,
 				A3E4D55D2B6D5BB7002E787C /* WelcomeViewModel.swift in Sources */,
 				A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */,
 				A3CEE5B92B27894D0005A134 /* AffirmAppApp.swift in Sources */,
 				A34BB43F2B700F5E00105F8E /* SettingsViewModel.swift in Sources */,
 				A3614CE42B2CF6D500D46479 /* AddAffirmationView.swift in Sources */,
+				A368D1742B740BF5009C2798 /* UserActivity.swift in Sources */,
 				A34BB43A2B6FFF3200105F8E /* WhiteGroupBox.swift in Sources */,
 				A34BB4342B6FD92600105F8E /* NotificationManager.swift in Sources */,
 				A3F272232B5D81C1002A7254 /* AffirmationProgressBarView.swift in Sources */,

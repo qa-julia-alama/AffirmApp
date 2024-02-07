@@ -21,6 +21,7 @@ class AffirmationViewModel: ObservableObject {
     private var affirmationCounter: Int = 0
     let hapticManager = HapticManager.shared
     
+    
     init() {
         container = NSPersistentContainer(name:  "AffirmationsContainer")
         container.loadPersistentStores { (description, error) in
@@ -96,7 +97,20 @@ class AffirmationViewModel: ObservableObject {
         saveData()
     }
     
-    
+    private func updateAffirmationCounterAndSaveActivity() {
+        let today = Date()
+        let savedEntitiesCount = savedEntitiesInProgress.filter { $0.value }.count
+
+           // Zliczanie afirmacji z drugiej listy
+           let savedFavouritesCount = savedFavouritesInProgress.filter { $0.value }.count
+
+           // Sumowanie afirmacji z obu list
+           let totalAffirmationsCount = savedEntitiesCount + savedFavouritesCount
+
+        // if date exists + current activities
+        UserActivityService.shared.saveActivity(for: today, affirmationsCount: totalAffirmationsCount)
+        }
+        
     func toggleAffirmation(_ affirmation: AffirmationEntity, value: Bool) {
         savedEntitiesInProgress[affirmation] = value
         if value == true {
@@ -105,6 +119,7 @@ class AffirmationViewModel: ObservableObject {
             affirmationCounter -= 1
         }
         checkAffirmationCounter()
+        updateAffirmationCounterAndSaveActivity()
     }
     
     func toggleAffirmation(_ affirmation: Affirmation, value: Bool) {
@@ -115,7 +130,9 @@ class AffirmationViewModel: ObservableObject {
             affirmationCounter -= 1
         }
         checkAffirmationCounter()
+        updateAffirmationCounterAndSaveActivity()
     }
+    
     
     func isInProgress(_ affirmation: AffirmationEntity) -> Bool {
         return savedEntitiesInProgress[affirmation] ?? false
