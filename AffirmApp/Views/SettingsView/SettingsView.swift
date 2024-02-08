@@ -19,7 +19,7 @@ struct SettingsView: View {
                     Image("appImage")
                         .cornerRadius(20)
                     Spacer()
-                    Text("Opis apki")
+                    Text("Aplikacja do zarządzania afirmacjami, w której będziesz mógł śledzić swój postęp \n w budowaniu nawyku pozytywnego myślenia.")
                 }
             } label: {
                 SettingsSectionHeaderView(title: "AffirmApp", icon: "info.circle")
