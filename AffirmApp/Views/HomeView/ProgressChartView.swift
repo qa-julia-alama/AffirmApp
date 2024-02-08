@@ -16,37 +16,31 @@ struct ProgressChartView: View {
             .frame(height: 300)
             .shadow(radius: 20)
             .overlay(
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .bottom, spacing: 4) {
-                        ForEach(viewModel.activities, id: \.date) { activity in
-                            VStack() {
-                                Text("Twój postęp: ")
-                                    .font(.title2)
-                                    .bold()
-                                Spacer()
-                                
-                                VStack {
-                                    Rectangle()
-                                        .fill(activity.affirmationsCount >= 5 ? Color.orange : Color.gray)
-                                        .frame(width: 20, height: CGFloat(activity.affirmationsCount) / CGFloat(5) * 100)
-                                    Text(formatter.string(from: activity.date))
-                                        .font(.caption)
-                                }
-                            }
-                            .onAppear {
-                                print("Generating a view for an activity: \(activity)")
-                            }
-                        }
-                    }
-                    .padding()
-                }
-                .onAppear {
-                    print("Current activities in ProgressChartView: \(viewModel.activities)")
-                },
-                alignment: .center
-            )
-    }
-}
+                VStack {
+                                  Text("Twój postęp: ") // Przesunięcie tekstu "Twój postęp" tutaj
+                                      .font(.title2)
+                                      .bold()
+                                      .padding(.bottom, 5)
+                                  
+                                  ScrollView(.horizontal, showsIndicators: false) {
+                                      HStack(alignment: .bottom, spacing: 4) {
+                                          ForEach(viewModel.activities, id: \.date) { activity in
+                                              VStack {
+                                                  Rectangle()
+                                                      .fill(activity.affirmationsCount >= 5 ? Color.orange : Color.gray)
+                                                      .frame(width: 20, height: CGFloat(activity.affirmationsCount) / CGFloat(5) * 100)
+                                                  Text(formatter.string(from: activity.date))
+                                                      .font(.caption)
+                                              }
+                                          }
+                                      }
+                                      .padding()
+                                  }
+                              },
+                              alignment: .center
+                          )
+                  }
+              }
 
 // DateFormatter to display date under the posts
 private let formatter: DateFormatter = {
