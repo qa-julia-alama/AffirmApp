@@ -17,11 +17,16 @@ struct ProgressChartView: View {
             .shadow(radius: 20)
             .overlay(
                 VStack {
-                                  Text("Twój postęp: ") // Przesunięcie tekstu "Twój postęp" tutaj
+                                  Text("Twój postęp: ")
                                       .font(.title2)
                                       .bold()
                                       .padding(.bottom, 5)
                                   
+                    if viewModel.activities.isEmpty {
+                        Text("W tym miejscu będzie rejestrowany postęp tworzenia nawyku.")
+                            .padding()
+                            .multilineTextAlignment(.center)
+                    }
                                   ScrollView(.horizontal, showsIndicators: false) {
                                       HStack(alignment: .bottom, spacing: 4) {
                                           ForEach(viewModel.activities, id: \.date) { activity in
