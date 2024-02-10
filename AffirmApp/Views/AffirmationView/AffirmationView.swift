@@ -87,7 +87,7 @@ struct AffirmationView: View {
                             EditAffirmationView(text: $affirmationToEdit)
                             .presentationDetents([.medium])
                         } else {
-                            EditAffirmationView(text: $textFieldText)
+                            EditAffirmationView(text: $affirmationToEdit)
                         }
                     }
                     

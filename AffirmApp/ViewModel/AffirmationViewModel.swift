@@ -23,7 +23,7 @@ class AffirmationViewModel: ObservableObject {
     
     
     init() {
-        container = NSPersistentContainer(name:  Constans.AffirmationsContainer)
+        container = NSPersistentContainer(name:  Constans.affirmationsContainer)
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("ERROR LOADING CORE DATA. \(error)")
@@ -39,7 +39,7 @@ class AffirmationViewModel: ObservableObject {
     } // init
     
     func fetchAffirmations() {
-        let request = NSFetchRequest<AffirmationEntity>(entityName: Constans.AffirmationEntity)
+        let request = NSFetchRequest<AffirmationEntity>(entityName: Constans.affirmationEntity)
         
         do {
             savedEntities = try container.viewContext.fetch(request)
@@ -86,7 +86,7 @@ class AffirmationViewModel: ObservableObject {
     }
     
     func editAffirmation(originalText: String, newText: String) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constans.AffirmationEntity)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constans.affirmationEntity)
         request.predicate = NSPredicate(format: "name == %@", originalText)
         do {
             let fetchResult = try container.viewContext.fetch(request) as? [NSManagedObject]

@@ -46,7 +46,7 @@ struct WelcomeView: View {
                     viewModel.setupWelcome()
                     viewModel.shouldShowNotification(shouldSendNotifications)
                 }, label: {
-                    Text(Constans.Start)
+                    Text(Constans.start)
                         .foregroundColor(.black)
                 })
                 .buttonStyle(.borderedProminent)

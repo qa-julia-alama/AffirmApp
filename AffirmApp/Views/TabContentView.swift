@@ -16,12 +16,12 @@ struct TabContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label(Constans.Start, systemImage: "house.fill")
+                    Label(Constans.start, systemImage: "house.fill")
                 }
             
             AffirmationView()
                 .tabItem {
-                    Label(Constans.Afirmacje, systemImage: "heart.fill")
+                    Label(Constans.affirmationTabName, systemImage: "heart.fill")
                 }
                 .environmentObject(viewModel)
         } //TabView

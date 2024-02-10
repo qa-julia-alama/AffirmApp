@@ -31,8 +31,8 @@ struct Constans {
     static let affirmationModeOff = "Koniec"
     static let affirmationModeOn = "Zaczynam"
     
-    static let AffirmationsContainer = "AffirmationsContainer"
-    static let AffirmationEntity = "AffirmationEntity"
+    static let affirmationsContainer = "AffirmationsContainer"
+    static let affirmationEntity = "AffirmationEntity"
     static let lastDisplayDate = "lastDisplayDate"
     static let favourites = "Favourites"
     static let counter = "Counter"
@@ -60,8 +60,8 @@ struct Constans {
     static let onboardingTitle = "Samouczek"
     
     //Tab
-    static let Start = "Start"
-    static let Afirmacje = "Afirmacje"
+    static let start = "Start"
+    static let affirmationTabName = "Afirmacje"
     
     //HomeView
     static let affirmationOfTheDayCardTitle = "Afirmacja dnia: "
