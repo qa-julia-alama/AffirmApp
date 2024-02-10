@@ -11,6 +11,8 @@ struct WelcomeView: View {
     @StateObject var viewModel = WelcomeViewModel()
     @State private var username: String = ""
     @AppStorage(Constans.shouldShowNotification) var shouldShowNotification: Bool = false
+    @Environment(\.scenePhase) var scenePhase
+    @State private var changedProgramatically: Bool = false
     
     var body: some View {
         ZStack {
@@ -53,13 +55,14 @@ struct WelcomeView: View {
                 .tint(.white)
             } // VStack1
                 .padding()
-            
                 .onChange(of: shouldShowNotification, perform: { _ in
-                viewModel.askForPermission()
-                    if !shouldShowNotification {
-                        viewModel.cancelNotifications()
+                    if !changedProgramatically {
+                        viewModel.askForPermission()
+                        if !shouldShowNotification {
+                            viewModel.cancelNotifications()
+                        }
                     }
-            })
+                })
             
         } // ZStack
         .alert(isPresented: $viewModel.shouldShowGoToSettings, content: {
@@ -72,8 +75,23 @@ struct WelcomeView: View {
             }))
         })
         .onAppear {
-            shouldShowNotification = viewModel.isNotificationPermissionGranted()
+            changedProgramatically = true
+            viewModel.checkToggle {
+                changedProgramatically = false
+                DispatchQueue.main.async {
+                    self.viewModel.shouldShowGoToSettings = false
+                }
+            }
         }
+        .onChange(of: scenePhase, perform: { value in
+            changedProgramatically = true
+            viewModel.checkToggle {
+                changedProgramatically = false
+                DispatchQueue.main.async {
+                    self.viewModel.shouldShowGoToSettings = false
+                }
+            }
+        })
     } //View2
 } // View1
 

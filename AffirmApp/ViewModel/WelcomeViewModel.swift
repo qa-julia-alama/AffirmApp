@@ -45,7 +45,10 @@ final class WelcomeViewModel: ObservableObject {
         notificationManager.shouldShowNotification(status)
     }
     
-    func isNotificationPermissionGranted() -> Bool {
-        notificationManager.isNotificationPermissionGranted()
-    }
+    func checkToggle(completion: @escaping () -> Void) {
+        notificationManager.isNotificationPermissionGranted(completion: { granted in
+          self.shouldShowNotification(granted)
+            completion()
+        })
+      }
 }

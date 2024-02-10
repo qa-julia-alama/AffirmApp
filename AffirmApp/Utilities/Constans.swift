@@ -55,7 +55,7 @@ struct Constans {
     static let appImage = "appImage"
     static let appDescription = "Aplikacja do zarządzania afirmacjami, w której będziesz mógł śledzić swój postęp \n w budowaniu nawyku pozytywnego myślenia."
     static let appName = "AffirmApp"
-    static let notificationToggleText = "Czy chcesz dostawac przypomnienia o codziennej afirmacji?"
+    static let notificationToggleText = "Czy chcesz dostawać przypomnienia o codziennej afirmacji?"
     static let notificationTitle = "Powiadomienia"
     static let onboaringSettingsButton = "Zobacz samouczek"
     static let onboardingTitle = "Samouczek"

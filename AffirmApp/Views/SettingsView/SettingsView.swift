@@ -11,6 +11,8 @@ struct SettingsView: View {
     @AppStorage(Constans.shouldShowNotification) var shouldShowNotification: Bool = true
     @AppStorage(Constans.shouldShowOnboarding) var shouldShowOnboarding: Bool = true
     @StateObject var viewModel = SettingsViewModel()
+    @Environment(\.scenePhase) var scenePhase
+    @State private var changedProgramatically: Bool = false
     
     var body: some View {
         VStack {
@@ -52,11 +54,12 @@ struct SettingsView: View {
             Spacer()
         } //VStack
         .padding()
-        .onChange(of: shouldShowNotification, perform: { value in
-           // viewModel.shouldShowNotification(shouldShowNotification)
-            viewModel.askForPermission()
-            if !shouldShowNotification {
-                viewModel.cancelNotifications()
+        .onChange(of: shouldShowNotification, perform: { _ in
+            if !changedProgramatically {
+                viewModel.askForPermission()
+                if !shouldShowNotification {
+                    viewModel.cancelNotifications()
+                }
             }
         })
         .alert(isPresented: $viewModel.shouldShowGoToSettings, content: {
@@ -69,8 +72,23 @@ struct SettingsView: View {
             }))
         })
         .onAppear {
-            shouldShowNotification = viewModel.isNotificationPermissionGranted()
+            changedProgramatically = true
+            viewModel.checkToggle {
+                changedProgramatically = false
+                DispatchQueue.main.async {
+                    self.viewModel.shouldShowGoToSettings = false
+                }
+            }
         }
+        .onChange(of: scenePhase, perform: { value in
+            changedProgramatically = true
+            viewModel.checkToggle {
+                changedProgramatically = false
+                DispatchQueue.main.async {
+                    self.viewModel.shouldShowGoToSettings = false
+                }
+            }
+        })
     }
 }
 

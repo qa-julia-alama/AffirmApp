@@ -54,18 +54,16 @@ class NotificationManager {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    func isNotificationPermissionGranted() -> Bool {
-        var granted: Bool = false
+    func isNotificationPermissionGranted(completion: @escaping (Bool) -> Void) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {
             case .notDetermined, .denied:
-                granted = false
+                completion(false)
             case .authorized, .provisional, .ephemeral:
-                granted = true
+                completion(true)
             default:
-                granted = false
+                completion(false)
             }
         }
-        return granted
     }
 }
