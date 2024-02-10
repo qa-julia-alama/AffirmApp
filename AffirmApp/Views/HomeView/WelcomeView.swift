@@ -20,10 +20,10 @@ struct WelcomeView: View {
                 .scaledToFill()
             
             VStack(spacing: 30) {
-                Text("Witaj Przyjacielu!")
+                Text(Constans.firstWelcomeHeader)
                     .font(.largeTitle)
                 VStack(spacing: 0) {
-                    Text("Jak sie nazywasz?")
+                    Text(Constans.secondWelcomeHeader)
                         .font(.system(size: 20))
                     TextField("", text: $username)
                         .textFieldStyle(.roundedBorder)
@@ -32,12 +32,12 @@ struct WelcomeView: View {
                 } // VStack3
                 
                 VStack {
-                    Toggle("Czy chcesz dostawac przypomnienia o codziennej afirmacji?",
+                    Toggle(Constans.notificationToggleText,
                            isOn: $shouldSendNotifications)
                     .padding()
                     .tint(.yellow)
                     .shadow(radius: 3)
-                    Text("Powiadomienia możesz poźniej wylaczyc w ustawieniach aplikacji")
+                    Text(Constans.askingForNotificationInfo)
                         .font(.caption)
                 } //VStack2
                 
@@ -46,7 +46,7 @@ struct WelcomeView: View {
                     viewModel.setupWelcome()
                     viewModel.shouldShowNotification(shouldSendNotifications)
                 }, label: {
-                    Text("Start")
+                    Text(Constans.Start)
                         .foregroundColor(.black)
                 })
                 .buttonStyle(.borderedProminent)

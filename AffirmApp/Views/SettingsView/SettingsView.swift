@@ -8,45 +8,45 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("shouldShowNotification") var shouldShowNotification: Bool = true
-    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
+    @AppStorage(Constans.shouldShowNotification) var shouldShowNotification: Bool = true
+    @AppStorage(Constans.shouldShowOnboarding) var shouldShowOnboarding: Bool = true
     @StateObject var viewModel = SettingsViewModel()
     
     var body: some View {
         VStack {
             GroupBox {
                 HStack {
-                    Image("appImage")
+                    Image(Constans.appImage)
                         .cornerRadius(20)
                     Spacer()
-                    Text("Aplikacja do zarządzania afirmacjami, w której będziesz mógł śledzić swój postęp \n w budowaniu nawyku pozytywnego myślenia.")
+                    Text(Constans.appDescription)
                 }
             } label: {
-                SettingsSectionHeaderView(title: "AffirmApp", icon: "info.circle")
+                SettingsSectionHeaderView(title: Constans.appName, icon: "info.circle")
                 Divider()
             } // GroupBoxAffirmApp
             
             GroupBox {
-                    Toggle("Czy chcesz dostawac przypomnienia o codziennej afirmacji?",
+                Toggle(Constans.notificationToggleText,
                            isOn: $shouldShowNotification)
                     .padding()
                     .tint(.yellow)
                     .shadow(radius: 3)
             } label: {
-                SettingsSectionHeaderView(title: "Powiadomienia", icon: "bell.badge.circle")
+                SettingsSectionHeaderView(title: Constans.notificationTitle, icon: "bell.badge.circle")
                 Divider()
-            } // GroupBoxPowiadomienia
+            } // GroupBoxNotifications
             
             GroupBox {
                     Button(action: {
                         shouldShowOnboarding = true
                     }
                             , label: {
-                        Text("Zobacz samouczek")
+                        Text(Constans.onboaringSettingsButton)
                     })
                     .padding()
             } label: {
-                SettingsSectionHeaderView(title: "Samouczek", icon: "book.circle")
+                SettingsSectionHeaderView(title: Constans.onboardingTitle, icon: "book.circle")
                 Divider()
             }
             Spacer()

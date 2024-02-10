@@ -37,5 +37,5 @@ struct AffirmationFavListItem: View {
 }
 
 #Preview {
-    AffirmationFavListItem(affirmation: Affirmation(id: 1, description: "Test affirmation"), shouldShowSelection: .constant(true))
+    AffirmationFavListItem(affirmation: Affirmation(id: 1, description: Constans.testAffirmationText), shouldShowSelection: .constant(true))
 }

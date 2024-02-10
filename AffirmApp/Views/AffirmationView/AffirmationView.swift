@@ -50,7 +50,7 @@ struct AffirmationView: View {
                 Button {
                     isAffirmationInProgress.toggle()
                 } label: {
-                    Text(isAffirmationInProgress ? "Koniec" : "Zaczynam")
+                    Text(isAffirmationInProgress ? Constans.affirmationModeOff : Constans.affirmationModeOn)
                 }
                 
                 if isAffirmationInProgress {
@@ -109,9 +109,9 @@ struct AffirmationView: View {
             } // VStack
             .alert(isPresented: $viewModel.shouldShowPopup) {
                     Alert(
-                      title: Text("Przyjacielu!"),
+                        title: Text(Constans.alertProgressTitle),
                       message: Text("Twój postęp tworzenia nawyku wynosi: \(viewModel.continuityCounter) dzień"),
-                      dismissButton: .default(Text("OK"))
+                        dismissButton: .default(Text(Constans.confirmButton))
                     )
                   } // alert
             .onAppear {
@@ -128,7 +128,7 @@ struct AffirmationView: View {
                     AddAffirmationView()
                 }
             }) // sheet
-            .navigationTitle("Lista afirmacji")
+            .navigationTitle(Constans.affirmationPageTitle)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {

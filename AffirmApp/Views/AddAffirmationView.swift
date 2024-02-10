@@ -19,17 +19,17 @@ struct AddAffirmationView: View {
         ZStack {
             Color.yellow.ignoresSafeArea()
             VStack (spacing: 30) {
-                Text("Dodaj afirmację")
+                Text(Constans.addAffirmationTitle)
                     .fontWeight(.semibold)
                     .font(.system(size: 30))
                 if #available(iOS 16.0, *) {
-                    TextField("Wpisz afirmację", text: $newAffirmation, axis: .vertical)
+                    TextField(Constans.affirmationInputFieldHint, text: $newAffirmation, axis: .vertical)
                     
                         .textFieldStyle(.roundedBorder)
                         .padding()
                 } else {
                     TextField(text: $newAffirmation) {
-                        Text("Wpisz afirmację")
+                        Text(Constans.affirmationInputFieldHint)
                     }
                     .textFieldStyle(.roundedBorder)
                     .padding()
@@ -42,7 +42,7 @@ struct AddAffirmationView: View {
                     newAffirmation = ""
                     dismiss()
                 }, label: {
-                    Text("Zapisz")
+                    Text(Constans.saveButton)
                 })
                 
             } //VStack

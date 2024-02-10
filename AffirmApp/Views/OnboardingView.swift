@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
+    @AppStorage(Constans.shouldShowOnboarding) var shouldShowOnboarding: Bool = true
         
       
         let images = ["onboarding1", "onboarding2", "onboarding3", "onboarding4"]

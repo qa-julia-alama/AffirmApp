@@ -17,18 +17,18 @@ struct EditAffirmationView: View {
         ZStack {
             Color.yellow.ignoresSafeArea()
             VStack (spacing: 30) {
-                Text("Edytuj afirmację")
+                Text(Constans.editAffirmationTitle)
                     .fontWeight(.semibold)
                     .font(.system(size: 30))
                 
-                TextField("Wprowadź afirmację", text: $text)
+                TextField(Constans.affirmationInputFieldHint, text: $text)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 Button {
                     viewModel.editAffirmation(originalText: originalText, newText: text)
                     dismiss()
                 } label: {
-                    Text("Zapisz")
+                    Text(Constans.saveButton)
                 }
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.blue)

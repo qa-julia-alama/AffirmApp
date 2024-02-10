@@ -23,12 +23,12 @@ class AffirmationViewModel: ObservableObject {
     
     
     init() {
-        container = NSPersistentContainer(name:  "AffirmationsContainer")
+        container = NSPersistentContainer(name:  Constans.AffirmationsContainer)
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("ERROR LOADING CORE DATA. \(error)")
             } else {
-                print("Successfully loaded core data!")
+                print(Constans.successCoreDataMessage)
             }
         }
         fetchAffirmations()
@@ -39,7 +39,7 @@ class AffirmationViewModel: ObservableObject {
     } // init
     
     func fetchAffirmations() {
-        let request = NSFetchRequest<AffirmationEntity>(entityName: "AffirmationEntity")
+        let request = NSFetchRequest<AffirmationEntity>(entityName: Constans.AffirmationEntity)
         
         do {
             savedEntities = try container.viewContext.fetch(request)
@@ -86,7 +86,7 @@ class AffirmationViewModel: ObservableObject {
     }
     
     func editAffirmation(originalText: String, newText: String) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "AffirmationEntity")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constans.AffirmationEntity)
         request.predicate = NSPredicate(format: "name == %@", originalText)
         do {
             let fetchResult = try container.viewContext.fetch(request) as? [NSManagedObject]
@@ -168,7 +168,7 @@ class AffirmationViewModel: ObservableObject {
     
     private func checkPopupDisplay() {
         let defaults = UserDefaults.standard
-        let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
+        let lastDisplayDate = defaults.object(forKey: Constans.lastDisplayDate) as? Date ?? Date.distantPast
         if !Calendar.current.isDateInToday(lastDisplayDate) {
             shouldShowPopup = true
             // Aktualizacja licznika ciągłości
@@ -178,15 +178,15 @@ class AffirmationViewModel: ObservableObject {
     
     private func updateContinuityCounter() {
         let defaults = UserDefaults.standard
-        let lastDisplayDate = defaults.object(forKey: "lastDisplayDate") as? Date ?? Date.distantPast
+        let lastDisplayDate = defaults.object(forKey: Constans.lastDisplayDate) as? Date ?? Date.distantPast
         if Calendar.current.isDateInYesterday(lastDisplayDate) {
             let counter = defaults.integer(forKey: Constans.counter)
             defaults.set(counter + 1, forKey: Constans.counter)
             continuityCounter = counter + 1
-            defaults.set(Date(), forKey: "lastDisplayDate")
+            defaults.set(Date(), forKey: Constans.lastDisplayDate)
         } else {
             continuityCounter = 1 // Resetuj licznik
-            defaults.set(Date(), forKey: "lastDisplayDate")
+            defaults.set(Date(), forKey: Constans.lastDisplayDate)
             defaults.set(1, forKey: Constans.counter)
         }
     }

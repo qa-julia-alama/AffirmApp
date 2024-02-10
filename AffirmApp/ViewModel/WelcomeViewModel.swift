@@ -12,11 +12,11 @@ final class WelcomeViewModel: ObservableObject {
     let notificationManager = NotificationManager.shared
     
     func saveUsername(_ name: String) {
-        UserDefaults.standard.setValue(name, forKey: "username")
+        UserDefaults.standard.setValue(name, forKey: Constans.username)
     }
     
     func setupWelcome() {
-        UserDefaults.standard.setValue(false, forKey: "shouldShowWelcome")
+        UserDefaults.standard.setValue(false, forKey: Constans.shouldShowWelcome)
     }
     
     func askForPermission() {

@@ -17,13 +17,13 @@ struct ProgressChartView: View {
             .shadow(radius: 20)
             .overlay(
                 VStack {
-                                  Text("Twój postęp: ")
+                    Text(Constans.progressChartCardTitle)
                                       .font(.title2)
                                       .bold()
                                       .padding(.bottom, 5)
                                   
                     if viewModel.activities.isEmpty {
-                        Text("W tym miejscu będzie rejestrowany postęp tworzenia nawyku.")
+                        Text(Constans.emptyProgressChartDescription)
                             .padding()
                             .multilineTextAlignment(.center)
                     }

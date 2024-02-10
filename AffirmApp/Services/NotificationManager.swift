@@ -24,8 +24,8 @@ class NotificationManager {
     
     func setupLocalNotifications(hour: Int, minute: Int) {
         let content = UNMutableNotificationContent()
-        content.title = "Przyjacielu!"
-        content.subtitle = "Pamiętaj o codzinnych afirmacjach"
+        content.title = Constans.alertProgressTitle
+        content.subtitle = Constans.notificationAlertDescription
         content.sound = UNNotificationSound.default
         
         var datComp = DateComponents()
@@ -40,6 +40,6 @@ class NotificationManager {
     }
     
     func shouldShowNotification(_ status: Bool) {
-        UserDefaults.standard.set(status, forKey: "shouldShowNotification")
+        UserDefaults.standard.set(status, forKey: Constans.shouldShowNotification)
     }
 }

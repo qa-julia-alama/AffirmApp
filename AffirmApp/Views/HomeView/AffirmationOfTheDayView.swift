@@ -33,7 +33,7 @@ struct AffirmationOfTheDayView: View {
             .overlay(alignment: .center) {
                 
                 VStack(spacing:10) {
-                    Text("Afirmacja dnia: ")
+                    Text(Constans.affirmationOfTheDayCardTitle)
                         .font(.title2)
                         .bold()
                     

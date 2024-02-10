@@ -12,8 +12,62 @@ struct Constans {
     static var gradient: LinearGradient {
         return LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.orange, Color.yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
+    static let fileURLWithPath = "/dev/null"
+    
+    //WelcomeView
+    static let firstWelcomeHeader = "Witaj Przyjacielu!"
+    static let secondWelcomeHeader = "Jak sie nazywasz?"
+    static let username = "username"
+    static let askingForNotificationInfo = "Powiadomienia możesz poźniej wyłaczyć w ustawieniach aplikacji"
+    
+    static let shouldShowWelcome = "shouldShowWelcome"
+    static let shouldShowNotification = "shouldShowNotification"
+    static let shouldShowOnboarding = "shouldShowOnboarding"
+    
+    static let successCoreDataMessage = "Successfully loaded core data!"
+    
+    //Affirmations
+    static let affirmationPageTitle = "Lista afirmacji"
+    static let affirmationModeOff = "Koniec"
+    static let affirmationModeOn = "Zaczynam"
+    
+    static let AffirmationsContainer = "AffirmationsContainer"
+    static let AffirmationEntity = "AffirmationEntity"
+    static let lastDisplayDate = "lastDisplayDate"
     static let favourites = "Favourites"
     static let counter = "Counter"
+
+    static let alertProgressTitle = "Przyjacielu!"
+    static let notificationAlertDescription = "Pamiętaj o codzinnych afirmacjach"
+    static let confirmButton = "OK"
+    
+    //AddAffirmation
+    static let addAffirmationTitle = "Dodaj afirmację"
+    static let affirmationInputFieldHint = "Wpisz afirmację"
+    
+    //EditAffirmation
+    static let editAffirmationTitle = "Edytuj afirmację"
+    static let saveButton = "Zapisz"
+    static let testAffirmationText = "Test affirmation"
+    
+    //Settings
+    static let appImage = "appImage"
+    static let appDescription = "Aplikacja do zarządzania afirmacjami, w której będziesz mógł śledzić swój postęp \n w budowaniu nawyku pozytywnego myślenia."
+    static let appName = "AffirmApp"
+    static let notificationToggleText = "Czy chcesz dostawac przypomnienia o codziennej afirmacji?"
+    static let notificationTitle = "Powiadomienia"
+    static let onboaringSettingsButton = "Zobacz samouczek"
+    static let onboardingTitle = "Samouczek"
+    
+    //Tab
+    static let Start = "Start"
+    static let Afirmacje = "Afirmacje"
+    
+    //HomeView
+    static let affirmationOfTheDayCardTitle = "Afirmacja dnia: "
+    static let progressChartCardTitle = "Twój postęp: "
+    static let emptyProgressChartDescription = "W tym miejscu będzie rejestrowany postęp tworzenia nawyku."
+    
     static let affirmations: [Affirmation] = [
             Affirmation(id: 1, description: "Jestem silny i zdolny"),
             Affirmation(id: 2, description: "Codziennie robię postępy"),
@@ -117,3 +171,4 @@ struct Constans {
             Affirmation(id: 99, description: "Moje życie jest pełne radości i szczęścia"),
             Affirmation(id: 100, description: "Jestem spokojny i zrelaksowany") ]
 }
+

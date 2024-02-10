@@ -14,12 +14,12 @@ final class AddAffirmationViewModel: ObservableObject{
     @Published var savedEntities: [AffirmationEntity] = []
     
     init() {
-        container = NSPersistentContainer(name:  "AffirmationsContainer")
+        container = NSPersistentContainer(name:  Constans.AffirmationsContainer)
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("ERROR LOADING CORE DATA. \(error)")
             } else {
-                print("Successfully loaded core data!")
+                print(Constans.successCoreDataMessage)
             }
         }
     } // init

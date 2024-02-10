@@ -13,7 +13,7 @@ import Combine
 class UserActivityService: ObservableObject {
     static let shared = UserActivityService()
     private let defaults = UserDefaults.standard
-    private let activityKey = "userActivity"
+    private let userActivityKey = "userActivityKey"
 
     @Published var activities: [UserActivity] = []
     
@@ -31,7 +31,7 @@ class UserActivityService: ObservableObject {
             activities.append(newActivity)
         }
         if let data = try? JSONEncoder().encode(activities) {
-            defaults.set(data, forKey: activityKey)
+            defaults.set(data, forKey: userActivityKey)
             self.activities = loadActivities()
             print("Activities saved: \(self.activities)")
         }
@@ -39,7 +39,7 @@ class UserActivityService: ObservableObject {
 
     
     func loadActivities() -> [UserActivity] {
-        guard let data = defaults.data(forKey: activityKey), let activities = try? JSONDecoder().decode([UserActivity].self, from: data) else {
+        guard let data = defaults.data(forKey: userActivityKey), let activities = try? JSONDecoder().decode([UserActivity].self, from: data) else {
             return []
         }
         return activities
