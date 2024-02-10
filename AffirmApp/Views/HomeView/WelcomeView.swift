@@ -10,7 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
     @StateObject var viewModel = WelcomeViewModel()
     @State private var username: String = ""
-    @State private var shouldSendNotifications: Bool = false
+    @AppStorage(Constans.shouldShowNotification) var shouldShowNotification: Bool = false
     
     var body: some View {
         ZStack {
@@ -33,7 +33,7 @@ struct WelcomeView: View {
                 
                 VStack {
                     Toggle(Constans.notificationToggleText,
-                           isOn: $shouldSendNotifications)
+                           isOn: $shouldShowNotification)
                     .padding()
                     .tint(.yellow)
                     .shadow(radius: 3)
@@ -44,7 +44,7 @@ struct WelcomeView: View {
                 Button(action: {
                     viewModel.saveUsername(username)
                     viewModel.setupWelcome()
-                    viewModel.shouldShowNotification(shouldSendNotifications)
+                    viewModel.shouldShowNotification(shouldShowNotification)
                 }, label: {
                     Text(Constans.start)
                         .foregroundColor(.black)
@@ -54,11 +54,26 @@ struct WelcomeView: View {
             } // VStack1
                 .padding()
             
-                .onChange(of: shouldSendNotifications, perform: { _ in
+                .onChange(of: shouldShowNotification, perform: { _ in
                 viewModel.askForPermission()
+                    if !shouldShowNotification {
+                        viewModel.cancelNotifications()
+                    }
             })
             
         } // ZStack
+        .alert(isPresented: $viewModel.shouldShowGoToSettings, content: {
+            Alert(title: Text(Constans.alertProgressTitle), message: Text(Constans.goToSettingsText), primaryButton: .default(Text(Constans.confirmButton), action: {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            }), secondaryButton: .cancel({
+                viewModel.shouldShowGoToSettings = false
+            }))
+        })
+        .onAppear {
+            shouldShowNotification = viewModel.isNotificationPermissionGranted()
+        }
     } //View2
 } // View1
 

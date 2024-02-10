@@ -53,9 +53,24 @@ struct SettingsView: View {
         } //VStack
         .padding()
         .onChange(of: shouldShowNotification, perform: { value in
-            viewModel.shouldShowNotification(shouldShowNotification)
+           // viewModel.shouldShowNotification(shouldShowNotification)
             viewModel.askForPermission()
+            if !shouldShowNotification {
+                viewModel.cancelNotifications()
+            }
         })
+        .alert(isPresented: $viewModel.shouldShowGoToSettings, content: {
+            Alert(title: Text(Constans.alertProgressTitle), message: Text(Constans.goToSettingsText), primaryButton: .default(Text(Constans.confirmButton), action: {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url)
+                }
+            }), secondaryButton: .cancel({
+                viewModel.shouldShowGoToSettings = false
+            }))
+        })
+        .onAppear {
+            shouldShowNotification = viewModel.isNotificationPermissionGranted()
+        }
     }
 }
 

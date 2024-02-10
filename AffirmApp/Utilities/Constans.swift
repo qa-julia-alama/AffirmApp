@@ -19,6 +19,7 @@ struct Constans {
     static let secondWelcomeHeader = "Jak sie nazywasz?"
     static let username = "username"
     static let askingForNotificationInfo = "Powiadomienia możesz poźniej wyłaczyć w ustawieniach aplikacji"
+    static let goToSettingsText = "Możesz zezwolić aplikacji AffirmApp na powiadomienia w ustawieniach"
     
     static let shouldShowWelcome = "shouldShowWelcome"
     static let shouldShowNotification = "shouldShowNotification"

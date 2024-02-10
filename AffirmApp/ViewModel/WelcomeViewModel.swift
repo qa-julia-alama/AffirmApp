@@ -10,6 +10,7 @@ import UserNotifications
 
 final class WelcomeViewModel: ObservableObject {
     let notificationManager = NotificationManager.shared
+    @Published var shouldShowGoToSettings: Bool = false
     
     func saveUsername(_ name: String) {
         UserDefaults.standard.setValue(name, forKey: Constans.username)
@@ -20,10 +21,31 @@ final class WelcomeViewModel: ObservableObject {
     }
     
     func askForPermission() {
-        notificationManager.askForPermission()
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                self.notificationManager.askForPermission()
+            case .denied: ()
+                DispatchQueue.main.async {
+                    self.shouldShowGoToSettings = true
+                }
+            case .authorized, .provisional, .ephemeral:
+                return
+            default:
+                self.notificationManager.askForPermission()
+            }
+        }
     }
 
+    func cancelNotifications() {
+        notificationManager.cancelScheduledNotification()
+    }
+    
     func shouldShowNotification(_ status: Bool) {
         notificationManager.shouldShowNotification(status)
+    }
+    
+    func isNotificationPermissionGranted() -> Bool {
+        notificationManager.isNotificationPermissionGranted()
     }
 }

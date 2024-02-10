@@ -13,10 +13,14 @@ class NotificationManager {
     static let shared = NotificationManager()
     
     func askForPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
                 self.setupLocalNotifications(hour: 17, minute: 00)
+                self.shouldShowNotification(true)
+            } else if !granted {
+                self.shouldShowNotification(false)
             } else if let error = error {
+                self.shouldShowNotification(false)
                 print(error.localizedDescription)
             }
         }
@@ -41,5 +45,27 @@ class NotificationManager {
     
     func shouldShowNotification(_ status: Bool) {
         UserDefaults.standard.set(status, forKey: Constans.shouldShowNotification)
+        if status == false {
+            cancelScheduledNotification()
+        }
+    }
+    
+    func cancelScheduledNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
+    func isNotificationPermissionGranted() -> Bool {
+        var granted: Bool = false
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .notDetermined, .denied:
+                granted = false
+            case .authorized, .provisional, .ephemeral:
+                granted = true
+            default:
+                granted = false
+            }
+        }
+        return granted
     }
 }
