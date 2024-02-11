@@ -15,44 +15,53 @@ struct SettingsView: View {
     @State private var changedProgramatically: Bool = false
     
     var body: some View {
-        VStack {
-            GroupBox {
-                HStack {
-                    Image(Constans.appImage)
-                        .cornerRadius(20)
-                    Spacer()
-                    Text(Constans.appDescription)
-                }
-            } label: {
-                SettingsSectionHeaderView(title: Constans.appName, icon: "info.circle")
-                Divider()
-            } // GroupBoxAffirmApp
-            
-            GroupBox {
-                Toggle(Constans.notificationToggleText,
+        ZStack {
+            Image(Constans.background)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                GroupBox {
+                    HStack {
+                        Image(Constans.appImage)
+                            .cornerRadius(20)
+                        Spacer()
+                        Text(Constans.appDescription)
+                    }
+                } label: {
+                    SettingsSectionHeaderView(title: Constans.appName, icon: "info.circle")
+                    Divider()
+                } // GroupBox
+                .groupBoxStyle(WhiteGroupBox())
+                
+                GroupBox {
+                    Toggle(Constans.notificationToggleText,
                            isOn: $shouldShowNotification)
                     .padding()
                     .tint(.yellow)
                     .shadow(radius: 3)
-            } label: {
-                SettingsSectionHeaderView(title: Constans.notificationTitle, icon: "bell.badge.circle")
-                Divider()
-            } // GroupBoxNotifications
-            
-            GroupBox {
+                } label: {
+                    SettingsSectionHeaderView(title: Constans.notificationTitle, icon: "bell.badge.circle")
+                    Divider()
+                } // GroupBoxNotifications
+                .groupBoxStyle(WhiteGroupBox())
+                
+                GroupBox {
                     Button(action: {
                         shouldShowOnboarding = true
                     }
-                            , label: {
+                           , label: {
                         Text(Constans.onboaringSettingsButton)
                     })
                     .padding()
-            } label: {
-                SettingsSectionHeaderView(title: Constans.onboardingTitle, icon: "book.circle")
-                Divider()
-            }
-            Spacer()
-        } //VStack
+                } label: {
+                    SettingsSectionHeaderView(title: Constans.onboardingTitle, icon: "book.circle")
+                    Divider()
+                }
+                .groupBoxStyle(WhiteGroupBox())
+                Spacer()
+            } //VStack
+        
         .padding()
         .onChange(of: shouldShowNotification, perform: { _ in
             if !changedProgramatically {
@@ -62,6 +71,7 @@ struct SettingsView: View {
                 }
             }
         })
+        } // ZStack
         .alert(isPresented: $viewModel.shouldShowGoToSettings, content: {
             Alert(title: Text(Constans.alertProgressTitle), message: Text(Constans.goToSettingsText), primaryButton: .default(Text(Constans.confirmButton), action: {
                 if let url = URL(string: UIApplication.openSettingsURLString) {
