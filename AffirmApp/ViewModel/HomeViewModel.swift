@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class HomeViewModel: ObservableObject {
     
@@ -13,9 +14,12 @@ final class HomeViewModel: ObservableObject {
     private var favourites: [Affirmation] = []
     @Published var isFavourite: Bool = false
     private var favouritesService = FavouritesService.shared
+    @Published var activities: [UserActivity] = []
+    private var cancellables = Set<AnyCancellable>()
     
     init() {
         affirmationOfTheDay = getRandomAffirmation()
+        subscribeToActivitiesUpdates()
     }
     
     func getRandomAffirmation() -> Affirmation {
@@ -63,4 +67,12 @@ final class HomeViewModel: ObservableObject {
         getFavourites()
     }
     
+    private func subscribeToActivitiesUpdates() {
+        UserActivityService.shared.$activities
+            .sink { [weak self] newActivities in
+                           self?.activities = newActivities
+                           print("Activities loaded to ViewModel: \(newActivities)")
+                       }
+            .store(in: &cancellables)
+    }
 }

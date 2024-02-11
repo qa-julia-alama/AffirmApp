@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressChartView: View {
-    @StateObject private var viewModel = ProgressChartViewModel()
+    @EnvironmentObject var viewModel: HomeViewModel
 
     var body: some View {
         RoundedRectangle(cornerRadius: 30)

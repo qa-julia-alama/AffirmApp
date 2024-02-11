@@ -21,15 +21,13 @@ struct HomeView: View {
                     VStack{
                         
                         AffirmationOfTheDayView()
-                            .environmentObject(viewModel)
-                       
                         ProgressChartView()
                             .padding(.top)
                         Spacer()
                     }
                     
                 } //ZStack
-            
+                .environmentObject(viewModel)
                 .sheet(isPresented: $isAddAffirmationViewPresented, content: {
                     if #available(iOS 16.0, *) {
                         AddAffirmationView()

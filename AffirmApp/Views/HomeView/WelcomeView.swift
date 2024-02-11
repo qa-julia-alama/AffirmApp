@@ -16,7 +16,7 @@ struct WelcomeView: View {
     
     var body: some View {
         ZStack {
-            Image("background")
+            Image(Constans.background)
                 .resizable()
                 .ignoresSafeArea(.all)
                 .scaledToFill()

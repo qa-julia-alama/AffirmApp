@@ -27,7 +27,6 @@
 		A368D1742B740BF5009C2798 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1732B740BF5009C2798 /* UserActivity.swift */; };
 		A368D1762B740C2E009C2798 /* UserActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1752B740C2E009C2798 /* UserActivityService.swift */; };
 		A368D1782B74193F009C2798 /* ProgressChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1772B74193F009C2798 /* ProgressChartView.swift */; };
-		A368D17A2B74278E009C2798 /* ProgressChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368D1792B74278E009C2798 /* ProgressChartViewModel.swift */; };
 		A39818F62B52E0F8005C3788 /* EditAffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */; };
 		A3B690F32B41A54D003871B2 /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B690F22B41A54D003871B2 /* AffirmationView.swift */; };
 		A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3B690F42B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld */; };
@@ -85,7 +84,6 @@
 		A368D1732B740BF5009C2798 /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
 		A368D1752B740C2E009C2798 /* UserActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityService.swift; sourceTree = "<group>"; };
 		A368D1772B74193F009C2798 /* ProgressChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartView.swift; sourceTree = "<group>"; };
-		A368D1792B74278E009C2798 /* ProgressChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartViewModel.swift; sourceTree = "<group>"; };
 		A39818F52B52E0F8005C3788 /* EditAffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAffirmationView.swift; sourceTree = "<group>"; };
 		A3B690F22B41A54D003871B2 /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
 		A3B690F52B41A6DD003871B2 /* AffirmationsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AffirmationsContainer.xcdatamodel; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 				A3469B422B49B39B004B3704 /* AddAffirmationViewModel.swift */,
 				A3E4D55C2B6D5BB7002E787C /* WelcomeViewModel.swift */,
 				A34BB43E2B700F5E00105F8E /* SettingsViewModel.swift */,
-				A368D1792B74278E009C2798 /* ProgressChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 				A3B690F62B41A6DD003871B2 /* AffirmationsContainer.xcdatamodeld in Sources */,
 				A3469B462B49E17B004B3704 /* FavouritesService.swift in Sources */,
 				A3614CDD2B2CE1E500D46479 /* TabContentView.swift in Sources */,
-				A368D17A2B74278E009C2798 /* ProgressChartViewModel.swift in Sources */,
 				A3469B432B49B39B004B3704 /* AddAffirmationViewModel.swift in Sources */,
 				A3E4D55D2B6D5BB7002E787C /* WelcomeViewModel.swift in Sources */,
 				A34964C72B59CB3300194914 /* AffirmationFavListItem.swift in Sources */,

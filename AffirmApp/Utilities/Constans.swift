@@ -14,6 +14,10 @@ struct Constans {
     }
     static let fileURLWithPath = "/dev/null"
     
+    //Images
+    static let background = "background"
+    static let infoCircle = "info.circle"
+    
     //WelcomeView
     static let firstWelcomeHeader = "Witaj Przyjacielu!"
     static let secondWelcomeHeader = "Jak sie nazywasz?"
