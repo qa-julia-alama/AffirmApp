@@ -21,5 +21,5 @@ struct SettingsSectionHeaderView: View {
 }
 
 #Preview {
-    SettingsSectionHeaderView(title: "", icon: "icon.circle")
+    SettingsSectionHeaderView(title: "", icon: Constans.infoIcon)
 }

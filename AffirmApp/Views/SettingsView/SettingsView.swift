@@ -29,7 +29,7 @@ struct SettingsView: View {
                         Text(Constans.appDescription)
                     }
                 } label: {
-                    SettingsSectionHeaderView(title: Constans.appName, icon: "info.circle")
+                    SettingsSectionHeaderView(title:Constans.appName, icon:Constans.infoIcon)
                     Divider()
                 } // GroupBox
                 .groupBoxStyle(WhiteGroupBox())
@@ -41,7 +41,7 @@ struct SettingsView: View {
                     .tint(.yellow)
                     .shadow(radius: 3)
                 } label: {
-                    SettingsSectionHeaderView(title: Constans.notificationTitle, icon: "bell.badge.circle")
+                    SettingsSectionHeaderView(title: Constans.notificationTitle, icon: Constans.notificationIcon)
                     Divider()
                 } // GroupBoxNotifications
                 .groupBoxStyle(WhiteGroupBox())
@@ -51,11 +51,11 @@ struct SettingsView: View {
                         shouldShowOnboarding = true
                     }
                            , label: {
-                        Text(Constans.onboaringSettingsButton)
+                        Text(Constans.onboaringButton)
                     })
                     .padding()
                 } label: {
-                    SettingsSectionHeaderView(title: Constans.onboardingTitle, icon: "book.circle")
+                    SettingsSectionHeaderView(title: Constans.onboardingTitle, icon: Constans.onboardingIcon)
                     Divider()
                 }
                 .groupBoxStyle(WhiteGroupBox())

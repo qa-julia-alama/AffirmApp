@@ -25,7 +25,7 @@ struct AffirmationOfTheDayView: View {
                 Button(action: {
                     viewModel.affirmationOfTheDay = viewModel.getRandomAffirmation()
                 }, label: {
-                    Image(systemName: "arrow.counterclockwise")
+                    Image(systemName: Constans.arrowIcon)
                         .padding()
                         .background(Circle().fill(.white.opacity(0.8)).padding(10))
                 })
@@ -44,9 +44,8 @@ struct AffirmationOfTheDayView: View {
                     Button(action: {
                         viewModel.toggleFavourite()
                     }, label: {
-                        Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
+                        Image(systemName: viewModel.isFavourite ? Constans.starFilledIcon : Constans.starEmptyIcon)
                             .padding()
-                        //.foregroundColor(.black)
                     })
                 }
             }

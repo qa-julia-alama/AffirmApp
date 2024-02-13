@@ -11,7 +11,7 @@ struct OnboardingView: View {
     @AppStorage(Constans.shouldShowOnboarding) var shouldShowOnboarding: Bool = true
         
       
-        let images = ["onboarding1", "onboarding2", "onboarding3", "onboarding4"]
+    let images = [Constans.onboarding1, Constans.onboarding2, Constans.onboarding3, Constans.onboarding4]
         
         var body: some View {
             TabView {
@@ -28,7 +28,7 @@ struct OnboardingView: View {
                 Button(action: {
                     shouldShowOnboarding = false
                 }, label: {
-                    Image(systemName: "x.circle.fill")
+                    Image(systemName: Constans.closeIcon)
                         .resizable()
                         .frame(width: 40, height: 40)
                 })

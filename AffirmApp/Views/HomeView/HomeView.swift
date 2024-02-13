@@ -46,14 +46,14 @@ struct HomeView: View {
                             isAddAffirmationViewPresented.toggle()
                             print(isAddAffirmationViewPresented)
                         }, label: {
-                            Image(systemName: "plus")
+                            Image(systemName: Constans.plusIcon)
                         })
                     } // ToolbarItem
                     ToolbarItem(placement: .topBarLeading) {
                         NavigationLink {
                             SettingsView()
                         } label: {
-                            Image(systemName: "gearshape")
+                            Image(systemName: Constans.gearIcon)
                         }
                     }
                 } //toolbar

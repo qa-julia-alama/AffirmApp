@@ -16,7 +16,24 @@ struct Constans {
     
     //Images
     static let background = "background"
-    static let infoCircle = "info.circle"
+    static let onboarding1 = "onboarding1"
+    static let onboarding2 = "onboarding2"
+    static let onboarding3 = "onboarding3"
+    static let onboarding4 = "onboarding4"
+    static let closeIcon = "x.circle.fill"
+    
+    //TabContentViewIcons
+    static let houseIcon = "house.fill"
+    static let heartIcon = "heart.fill"
+    
+    //HomeViewIcons
+    static let plusIcon = "plus"
+    static let gearIcon = "gearshape"
+    
+    //AffirmationOfTheDayViewIcons
+    static let arrowIcon = "arrow.counterclockwise"
+    static let starFilledIcon = "star.fill"
+    static let starEmptyIcon = "star"
     
     //WelcomeView
     static let firstWelcomeHeader = "Witaj Przyjacielu!"
@@ -55,14 +72,19 @@ struct Constans {
     static let saveButton = "Zapisz"
     static let testAffirmationText = "Test affirmation"
     
-    //Settings
+    //SettingsTexts
     static let appImage = "appImage"
     static let appDescription = "Aplikacja do zarządzania afirmacjami, w której będziesz mógł śledzić swój postęp \n w budowaniu nawyku pozytywnego myślenia."
     static let appName = "AffirmApp"
     static let notificationToggleText = "Czy chcesz dostawać przypomnienia o codziennej afirmacji?"
     static let notificationTitle = "Powiadomienia"
-    static let onboaringSettingsButton = "Zobacz samouczek"
+    static let onboaringButton = "Zobacz samouczek"
     static let onboardingTitle = "Samouczek"
+    
+    //SettingsIcons
+    static let infoIcon = "info.circle"
+    static let notificationIcon = "bell.badge.circle"
+    static let onboardingIcon = "book.circle"
     
     //Tab
     static let start = "Start"
