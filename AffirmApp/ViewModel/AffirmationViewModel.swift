@@ -55,14 +55,11 @@ class AffirmationViewModel: ObservableObject {
         savedEntitiesInProgress[newAffirmation] = false
     }
     
-    
-    func deleteAffirmation(offsets: IndexSet) {
-        guard let index = offsets.first else { return }
-        let affirmationEntity = savedEntities[index]
-        container.viewContext.delete(affirmationEntity)
-        saveData()
-        savedEntitiesInProgress.removeValue(forKey: affirmationEntity)
-    }
+    func deleteAffirmation(_ affirmation: AffirmationEntity) {
+            container.viewContext.delete(affirmation)
+            saveData()
+            savedEntitiesInProgress.removeValue(forKey: affirmation)
+        }
     
     func saveData() {
         do {
@@ -78,12 +75,10 @@ class AffirmationViewModel: ObservableObject {
         favourites = favouritesService.favouritesArray
     }
     
-    func deleteFavourite(offsets: IndexSet) {
-        guard let index = offsets.first else { return }
-        let affirmation = favourites[index]
-        favouritesService.remove(affirmation)
-        getFavourites()
-    }
+    func deleteFavourite(_ affirmation: Affirmation) {
+            favouritesService.remove(affirmation)
+            getFavourites()
+        }
     
     func editAffirmation(originalText: String, newText: String) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constans.affirmationEntity)

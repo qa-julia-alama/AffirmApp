@@ -73,9 +73,14 @@ struct AffirmationView: View {
                                         Label("", systemImage: "pencil")
                                     }
                                 }
-                        }
-                        .onDelete { indexSet in
-                            viewModel.deleteAffirmation(offsets: indexSet)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                                                Button {
+                                                                    viewModel.deleteAffirmation(affirmation)
+                                                                } label: {
+                                                                    Label("", systemImage: "xmark.bin")
+                                                                }
+                                                                .tint(.red)
+                                                            }
                         }
                     } // List
                     .listStyle(PlainListStyle())
@@ -97,9 +102,14 @@ struct AffirmationView: View {
                         ForEach(viewModel.favourites, id: \.id) { affirmation in
                             AffirmationFavListItem(affirmation: affirmation, shouldShowSelection: $isAffirmationInProgress)
                                 .listRowSeparator(.hidden)
-                        }
-                        .onDelete { indexSet in
-                            viewModel.deleteFavourite(offsets: indexSet)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                    Button {
+                                        viewModel.deleteFavourite(affirmation)
+                                    } label: {
+                                        Label("", systemImage: "xmark.bin")
+                                    }
+                                    .tint(.red)
+                                }
                         }
                     } // List
                     .listStyle(PlainListStyle())
