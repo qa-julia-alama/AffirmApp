@@ -9,7 +9,11 @@ import SwiftUI
 
 struct OnboardingView: View {
     @AppStorage(Constans.shouldShowOnboarding) var shouldShowOnboarding: Bool = true
-        
+    
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+        }
       
     let images = [Constans.onboarding1, Constans.onboarding2, Constans.onboarding3, Constans.onboarding4]
         
@@ -30,7 +34,7 @@ struct OnboardingView: View {
                 }, label: {
                     Image(systemName: Constans.closeIcon)
                         .resizable()
-                        .frame(width: 40, height: 40)
+                        .frame(width: 20, height: 20)
                 })
                 .padding()
             }

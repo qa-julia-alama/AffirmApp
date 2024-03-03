@@ -20,7 +20,7 @@ struct Constans {
     static let onboarding2 = "onboarding2"
     static let onboarding3 = "onboarding3"
     static let onboarding4 = "onboarding4"
-    static let closeIcon = "x.circle.fill"
+    static let closeIcon = "xmark"
     
     //TabContentViewIcons
     static let houseIcon = "house.fill"

@@ -162,6 +162,9 @@
 		A3614CE22B2CEB6E00D46479 /* AddAffirmationView */ = {
 			isa = PBXGroup;
 			children = (
+				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
+				A34BB4392B6FFF3200105F8E /* WhiteGroupBox.swift */,
+				A34BB4402B7023CE00105F8E /* OnboardingView.swift */,
 			);
 			path = AddAffirmationView;
 			sourceTree = "<group>";
@@ -256,9 +259,6 @@
 				A3469B442B49D82F004B3704 /* AffirmationView */,
 				A3614CE52B2D094700D46479 /* HomeView */,
 				A3614CE22B2CEB6E00D46479 /* AddAffirmationView */,
-				A3614CE32B2CF6D500D46479 /* AddAffirmationView.swift */,
-				A34BB4392B6FFF3200105F8E /* WhiteGroupBox.swift */,
-				A34BB4402B7023CE00105F8E /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
